@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SNCF TICKETING</title>
-    <link rel="stylesheet" href="/CSS/page_accueil.css" />
+    <link rel="stylesheet" href="/CSS/page_gestion_tickets.css" />
 </head>
 
 <!--BODY-->
@@ -18,11 +18,42 @@
                <div class="presentation">
                     <h1 class="titre_principal">SNCF TICKETING</h1>
                 </div>
-                       
-        </header>      
+                <nav class="nav">
+                    <li><a href="/HTML/Page_utilisateur.html">Mon profil</a></li> 
+                    <li><a href="/HTML/Page_accueil.html">Déconnexion</a></li>
+                  </nav>                     
+        </header>   
         
-        
+        <!--PREMIER BLOC-->
 
+        <div class="JeSuisUtilisateur">
+            <h2 class="titre3"> Je suis utilisateur : <span style="color:#82BE00;"> SNCF Ticketing </span></h2>
+        </div>
+
+        <div class="container">
+            <div class="PremierContainer">
+                <p class="ticketCree"> Liste des tickets créés</p>
+                <div class="listeTickets">
+                    <input type="text" class="rectangle" placeholder="Champs de saisie">
+                    <input type="text" class="rectangle" placeholder="Champs de saisie">
+                    <input type="text" class="rectangle" placeholder="Champs de saisie">
+                </div>
+            </div>
+
+
+            <div class="DeuxiemeContainer">
+                <p class="formTickets">Formulaire de création de tickets</p>
+               <button type="button" class="btnCreation">Je veux créer un ticket</button>              
+                   <div class="NouveauTicket">
+                       <input type="text" class="rectangle2" placeholder="Champs Saisie">
+                       <input type="text" class="rectangle2" placeholder="Champs Saisie">
+                       <input type="text" class="rectangle2" placeholder="Champs Saisie"> 
+                   </div>    
+                   <button type="Validation" class= "btnValidation">Valider</button>       
+           </div>
+        </div>
+
+        
         <footer class="footer">
             <img class="logo_sncf2" src="/Images/logo-removebg-preview.png" alt="logo_sncf2"/>
                 <div class="contenu_footer">
@@ -30,4 +61,8 @@
                 </div>
         </footer>
    
+</section>
+</body>
+</html>
+
                     

@@ -4,86 +4,218 @@ body{
     height: 100%;
     overflow: hidden;
     position: relative;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
     }
     
     
     .presentation{
       color:#1e173c;
-    font-size: 17px;
-      padding: 10px 800px;
+    font-size: 22px;
+      padding:  1px 800px;
       font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
       text-align: center;
         }
-    
+
         h3{
+  
+          position: fixed;
+          bottom: 0;
+          width: 100%;
           color: white;
-          font-size: 20px;
-          padding: 160px;;
-        }
+          text-align: center;
+          padding: 10px 0;
+      }
     
     
-    
-          /*HEADER*/
-    .header{
-        display : flex;
-        flex-direction: row;
-        height: 160px;
-        width: 100%;
-        border: solid;
-        background-color: #a0a09f;
-        border-color: #a0a09f;  
-        padding: 20px; /* Ajoute un peu d'espace autour du header */
-        
-      }  .header h1 {
-        margin: 2; /* Supprime la marge par défaut du h1 */
-        font-size: 4em; /* Taille de police personnalisée (facultatif) */
-        display: flex;}
-    
-    
-      .logo_sncf{
-        height: 200px;
-        width: 200px;
      
+      /*HEADER*/
+.header{
+    display : flex;
+    flex-direction: row;
+    height: 160px;
+    width: 100%;
+    border: solid;
+    background-color: #a0a09f;
+    border-color: #a0a09f;  
+    padding: 20px; 
     
-     }
+  }  .header h1 {
+    margin: 2; 
+    font-size: 4em; 
+    display: flex;
+  }
+
+
+  .logo_sncf{
+    height: 200px;
+    width: 200px;
+  }
     
          /* menu de navigation*/
-         .nav{
-            display : flex;
-            justify-content:space-between;
-            list-style: none;
-            width: 10%;
-            margin-top: 120px;
-            font-size: 2rem;
-            font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
-             }
+     .nav{
+      display : flex;
+      justify-content:space-between;
+      list-style: none;
+      margin:3%;
+      padding: 0;   }   
+
+       .nav li {
+        margin: 0 70px }
+
+        .nav a {
+          text-decoration: none; 
+          color: #1e173c;
+          font-weight: bold;
+          font-size: 3rem;
+          font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+        }
     
-             /*FOOTER*/
+
+
+/*PREMIER BLOC*/
+
+ 
+ .titre3{
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+ }
+
+ .container {
+  display: flex;
+  justify-content: space-around; 
+  align-items: flex-start; 
+  padding: 20px;
+
+}
+
+.PremierContainer, .DeuxiemeContainer {
+  background-color: lightgray;
+  padding: 20px;
+  border-radius: 8px;
+  width: 40%;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: flex-start;
+}
+
+
+.formTickets {
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-align: center; /* Centre le texte */
+  width: 100%; /* Assure que le texte utilise toute la largeur disponible pour le centrage */
+}
+.DeuxiemeContainer{
+  display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+
+ .PremierContainer {
+  align-items: center;
+  justify-content: center;
+}
+
+.listeTickets {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; 
+  width: 100%;
+}
+
+.ticketCree{
+align-items: flex-start;
+}
+
+
+.NouveauTicket{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.rectangle,.rectangle2 {
+  width: 100%;
+  height: 180px;
+  padding: 10px;
+  border: 1px solid #1e173c;
+  box-sizing: border-box; 
+  text-align: center;
+  font-size: 2rem;
+}
+
+.btnCreation, .btnValidation {
+  padding: 10px 20px;
+  font-size: 25px;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  background-color: #82BE00;
+  color: white;
+  margin-top: 50px; 
+}
+
+.btnCreation {
+  
+      margin-bottom: 40px; 
+      height: 100px;
+      width: 400px;
+}
+
+
+
+
+.ticketCree,.formTickets{
+  margin-bottom: 20px;
+  padding: 10px 10px;
+  font-size: 50px;
+  cursor: pointer;
+  color:#1e173c;
+  border-radius: 2px;
+  font-weight: bold;
+  font-weight: bold;
+  text-align: center;
+}
+
+.formTickets{
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+}
+
+
+
+              /*FOOTER*/
+
+         .footer{
+          height: 220px;
+          border: solid;
+          background-color: #1e173c;
+          border-color: #1e173c;
+          bottom: 0;
+          width: 100%;
+          text-align: center;
+          padding: 10px 0;
+          color: white;
+          position: fixed;      
+          left: 0;
+          bottom: 0;
+        }
     
-             .footer{
-        
-              height: 220px;
-              border: solid;
-              background-color: #1e173c;
-              border-color: #1e173c;
-              bottom: 0;
-              width: 100%;
-              position: relative;
-              text-align: center;
-              padding: 10px;
-              color: white;
-              margin-top:800px;
-           
-            }
-    
-            .logo_sncf2{
-              position: absolute;
-            
-              left: 0;
-              width: 320px; /* Ajustez la taille de l'image selon vos besoins */
-              height: auto;
-          }
-    
-    
+      .logo_sncf2{
+        position: absolute;     
+        left: 0;
+        width: 340px; 
+        height: auto;
+    }
+
        
         
