@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SNCF TICKETING</title>
-    <link rel="stylesheet" href="/CSS/page_accueil.css" />
+    <link rel="stylesheet" href="/CSS/page_utilisateur.css" />
 </head>
 
 <!--BODY-->
@@ -18,14 +18,54 @@
                <div class="presentation">
                     <h1 class="titre_principal">SNCF TICKETING</h1>
                 </div>
-                        <nav class="nav">
-                            <li><a href="/HTML/Page_utilisateur.html">Mon profil</a></li>
-                            <li><a href="/HTML/Page_accueil.html">Déconnexion</a></li>
-                        </nav>
-        </header>      
+        </header>   
         
-        
+        <!--PREMIER BLOC-->
+        <div class="PremierBloc">
+           <div class="Bienvenue">
+               <h2 class="titre2"> Je suis utilisateur : <span style="color:#82BE00;"> SNCF Ticketing </span></h2>
+               <h3 class="titreInformatif">Titre informatif</h3>
+               <div class="separateur"></div>
+           </div>     
+           <div class="imageDroite">
+            <img src="/Images/page_accomp_clients.jpg" alt="image3" class="imageAgrandie">
+           </div>
+       </div>  
 
+       <!--DEUXIEME BLOC -->
+       <div class="DeuxiemeBloc">
+           <div class="Bienvenue">
+               <h3 class="titreInformatif">Titre informatif <img src="/Images/question-mark-vector-icon.jpg" alt="interrogation" class="iconeQuestion"></h3>
+           </div>
+           <div class="champSaisie">
+            <input type="text" class="rectangle" placeholder="Champs de saisie">
+           </div>
+       </div>
+
+       <!--TROISIEME BLOC-->
+       <div class="TroisiemeBloc">
+            <div class="Bienvenue">
+               <h3 class="titreInformatif">Titre informatif <img src="/Images/question-mark-vector-icon.jpg" alt="question mark" class="iconeQuestion"> </h3> 
+           </div>
+            <div class="champSaisie">
+              <input type="text" class="rectangle" placeholder="Champs de saisie">
+            </div>
+
+         <!--QUATRIEME BLOC-->   
+            <div class="ContainerCheckbox">
+                <input type="checkbox" id="checkbox1" class="checkbox">
+                <label for="checkbox1" class="checkboxLabel">Checkbox</label>              
+            </div>              
+       
+       <!--CINQUIEME BLOC-->
+            <div class="btnContainer">
+                <a href="/HTML/page_profil.html" class="btn BtnConnexion">Connexion</a>
+                <a href="/HTML/page_creation_profil.html" class="btn BtnCompte">Creation de compte </a>
+                <a href="/HTML/Page_accueil.html" class="btn BtnMdpOublie">Mot de passe oublié</a>          
+           </div>
+       </div> 
+
+        
         <footer class="footer">
             <img class="logo_sncf2" src="/Images/logo-removebg-preview.png" alt="logo_sncf2"/>
                 <div class="contenu_footer">
@@ -34,3 +74,9 @@
         </footer>
    
                     
+
+
+        
+    </section>
+</body>
+</html>

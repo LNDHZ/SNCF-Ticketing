@@ -1,0 +1,250 @@
+body{
+    margin: 0 auto;
+    background-color: white;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    }
+    
+     
+    .presentation{
+      color:#1e173c;
+    font-size: 22px;
+      padding:  1px 800px;
+      font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+      text-align: center;
+        }
+    
+          /*HEADER*/
+    .header{
+        display : flex;
+        flex-direction: row;
+        height: 160px;
+        width: 100%;
+        border: solid;
+        background-color: #a0a09f;
+        border-color: #a0a09f;  
+        padding: 20px; 
+        
+      }  .header h1 {
+        margin: 2; 
+        font-size: 4em; 
+        display: flex;
+      }
+    
+    
+      .logo_sncf{
+        height: 200px;
+        width: 200px;
+      }
+
+      
+      /*PREMIER BLOC */
+
+      .titreInformatif{
+        flex: ;
+        line-height: 1.5;
+        font-size: 3rem;
+        border: 1px solid;
+        border-color: #82BE00;
+       color: #1e173c;
+        text-align: center;
+        border-radius: 6px;
+        margin-top: 5%;
+        width: 800px;
+        height: 80px;
+      }
+
+      .PremierBloc {
+        display: flex;    
+        align-items: flex-start; 
+        justify-content: space-between; 
+        margin-top: 20px;
+        height: 400px;
+        margin-bottom: 20px;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    
+    .Bienvenue {
+        flex: 1; 
+        max-width: 50%;
+        margin-right: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+.imageDroite{
+    flex: 1; 
+    max-width: 50%; 
+    text-align: right;
+    padding-top: 20px;
+}
+
+.imageAgrandie {
+    width: 100%;
+    height: auto;
+    max-width: 500px; 
+    border-radius: 8px;
+    margin-top: 20px;
+}
+      .titre2{
+        font-size: 3rem;
+        display: flex;
+        justify-content: center;
+        font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+        line-height: 1.4;
+       }
+
+ 
+       .separateur {
+        width: 100%;
+        height: 2px; 
+        background-color: #1e173c;
+
+    }
+       
+
+    
+    @media (max-width: 768px) {
+        .PremierBloc {
+            flex-direction: column; 
+        } 
+        .Bienvenue,
+        .image-container {
+            max-width: 100%; 
+            text-align: center; 
+        }
+    }
+
+    .imageAgrandie {
+        max-width: 90%; 
+        height: auto;
+        margin-right: 2%;
+    }  
+        
+
+    /*DEUXIEME BLOC*/ /*TROISIEME BLOC */
+
+     .DeuxiemeBloc,.TroisiemeBloc {
+        margin-top: -50px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+    }
+    
+    .champSaisie input {
+        width: 1600px; 
+        height: 110px; 
+        padding: 5px; 
+        font-size: 2rem; 
+        border: 2px solid #ccc; 
+        border-radius: 4px; 
+        text-align: center;
+        margin-left: 5%;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+    .rectangle {
+        width: 100%; 
+        padding: 8px; 
+        box-sizing: border-box; 
+    }
+    
+    .iconeQuestion {
+        width: 50px; 
+        height: auto; 
+        vertical-align: middle; 
+        margin-left: 60px;  
+    }
+    
+/*QUATRIEME BLOC*/
+
+.ContainerCheckbox{
+    margin-top: 50px;
+    display: flex;
+    align-items: center; 
+}
+
+.checkbox {
+    appearance: none;
+    background-color: #fff;
+    border: 3px solid #ccc;
+    width: 50px; 
+    height: 50px; 
+    cursor: pointer;
+    position: relative;
+    outline: none; 
+}
+
+.checkboxLabel {
+    font-size: 2rem; 
+    margin-left: 20px;
+  color: #82BE00;
+}
+
+/*CINQUIEME BLOC*/
+
+.btnContainer {
+    display: flex;
+    margin-top: 30px; 
+    gap:100px;
+    margin: 30px;
+}
+
+.btn {
+    padding: 15px 20px; 
+    border: none;
+    color: #fff;
+    border-radius: 4px; 
+    cursor: pointer; 
+    font-size: 20px; 
+    transition: background-color 0.3s ease; 
+}
+
+.BtnConnexion,.BtnCompte {
+    background-color: #1e173c;
+    height: 40px;
+    width: 400px;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.BtnMdpOublie{
+    background-color: #82BE00;
+    height: 40px;
+    width: 400px;
+    font-size: 2rem;
+    text-align: center;
+}
+
+
+/*FOOTER*/
+
+.footer{
+    height: 220px;
+    border: solid;
+    background-color: #1e173c;
+    border-color: #1e173c;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    color: white;
+    position: fixed;      
+    left: 0;
+    bottom: 0;
+  }
+
+.logo_sncf2{
+  position: absolute;     
+  left: 0;
+  width: 340px; 
+  height: auto;
+}
+
+
