@@ -1,0 +1,187 @@
+body{
+  margin: 0 auto;
+  background-color: white;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  }
+  
+   
+  .presentation{
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    color:#1e173c;
+  font-size: 30px;
+    padding:  1px 800px;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    text-align: center;
+      }
+  
+  h3{
+    
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      font-size: 2rem;
+  }
+  
+    
+        /*HEADER*/
+  .header{
+      display : flex;
+     justify-content: space-between;
+     align-items: center;
+      height: 160px;
+      width: 100%;
+      border: solid;
+      background-color: #a0a09f;
+      border-color: #a0a09f;  
+      padding: 20px; 
+      
+    }  .header h1 {
+      margin: 2; 
+      font-size: 4em; 
+      display: flex;
+    }
+  
+  
+    .logo_sncf{
+      height: 350px;
+      width: 350px;
+    }
+  
+   
+   .titre2{
+    font-size: 5rem;
+    display: flex;
+    justify-content: center;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+   }
+  
+       /* menu de navigation*/
+       .nav {
+        list-style-type: none;
+        margin: 4%;
+        padding: 2%;
+    }
+  
+         .nav li {
+          display: inline;
+          margin: 0 70px }
+  
+          .nav a {
+            text-decoration: none; 
+            color: #1e173c;
+            font-weight: bold;
+            font-size: 3rem;
+            font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+          }
+  
+          .titre_principal {
+            margin: 0;
+            font-size: 24px;
+        }
+  
+  
+        .contenu {
+          padding: 100px;
+          display: flex;
+          justify-content: space-between;
+      }
+
+      .ContainerTickets {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+     
+    }
+    .ClotureTickets,.ListeTickets{
+      width: 45%; 
+      height: 800px;
+      background-color: #ddd;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .ListeTickets h2, .ClotureTickets h2 {
+      margin-top: 5px;
+      font-size: 3rem;
+      text-align: center;
+
+  }
+
+  .ListeTickets h4, .ClotureTickets h4 {
+    font-size: 30px;
+    color:#1e173c;
+    font-weight: bold;
+  }
+  
+      .ticket {
+        border-bottom: 2px solid #ddd;
+        padding: 10px 0;
+    }
+    
+    .ticket:last-child {
+      border-bottom: none;
+  }
+    
+
+    .ContenuTicket {
+        margin: 5px 0;
+        color: #555;
+        font-size: 25px;
+    }
+    
+
+    .StatutTicket {
+      font-weight: bold;
+      color: #82BE00;
+      font-size: 2rem;
+  }
+  
+  .ActionTicket {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+  }
+  
+  .ActionTicket:hover {
+      background-color: #0056b3;
+  }
+
+         
+        /*FOOTER*/
+
+        .footer{
+           height: 220px;
+           border: solid;
+           background-color: #1e173c;
+           border-color: #1e173c;
+           bottom: 0;
+           width: 100%;
+           text-align: center;
+           padding: 10px 0;
+           color: white;
+           position: fixed;      
+           left: 0;
+           bottom: 0;
+         }
+      
+       
+
+       .logo_sncf2{
+         position: absolute;     
+         left: 0;
+         width: 340px; /* Ajustez la taille de l'image selon vos besoins */
+         height: auto;
+     }
+
+        

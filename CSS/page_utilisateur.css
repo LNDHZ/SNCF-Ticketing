@@ -6,54 +6,64 @@ body{
     position: relative;
     }
     
-     
-    .presentation{
-      color:#1e173c;
-    font-size: 22px;
-      padding:  1px 800px;
-      font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
-      text-align: center;
-        }
-    
-          /*HEADER*/
-    .header{
-        display : flex;
-        flex-direction: row;
-        height: 160px;
+    h3{
+  
+        position: fixed;
+        bottom: 0;
         width: 100%;
-        border: solid;
-        background-color: #a0a09f;
-        border-color: #a0a09f;  
-        padding: 20px; 
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        font-size: 2rem;
+    }
+        
+    .presentation{
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        color:#1e173c;
+      font-size: 30px;
+        padding:  1px 800px;
+        font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+        text-align: center;
+    }
+
+
+    /*HEADER*/
+.header{
+    display : flex;
+   justify-content: space-between;
+   align-items: center;
+    height: 160px;
+    width: 100%;
+    border: solid;
+    background-color: #a0a09f;
+    border-color: #a0a09f;  
+    padding: 20px; 
         
       }  .header h1 {
         margin: 2; 
         font-size: 4em; 
         display: flex;
       }
-    
-    
       .logo_sncf{
-        height: 200px;
-        width: 200px;
+        height: 350px;
+        width: 350px;
       }
+       
+ .titre2{
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+   }
 
-      
+      .titre_principal {
+        margin: 0;
+        font-size: 24px;
+    }
+
       /*PREMIER BLOC */
-
-      .titreInformatif{
-        flex: ;
-        line-height: 1.5;
-        font-size: 3rem;
-        border: 1px solid;
-        border-color: #82BE00;
-       color: #1e173c;
-        text-align: center;
-        border-radius: 6px;
-        margin-top: 5%;
-        width: 800px;
-        height: 80px;
-      }
 
       .PremierBloc {
         display: flex;    
@@ -66,6 +76,21 @@ body{
         box-sizing: border-box;
     }
     
+    .titreInformatif{
+        display: flex;
+        align-items: center;
+        line-height: 1.5;
+        font-size: 3rem;
+        border: 1px solid;
+        border-color: #82BE00;
+       color: #1e173c;
+        text-align: center;
+        border-radius: 6px;
+        margin-top: 5%;
+        width: 800px;
+        height: 80px;
+      }
+
     .Bienvenue {
         flex: 1; 
         max-width: 50%;
@@ -90,13 +115,7 @@ body{
     border-radius: 8px;
     margin-top: 20px;
 }
-      .titre2{
-        font-size: 3rem;
-        display: flex;
-        justify-content: center;
-        font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
-        line-height: 1.4;
-       }
+    
 
  
        .separateur {
@@ -130,7 +149,7 @@ body{
 
      .DeuxiemeBloc,.TroisiemeBloc {
         margin-top: -50px;
-        padding: 10px;
+        padding: 20px;
         display: flex;
         flex-direction: column;
         margin-bottom: 20px;
@@ -156,10 +175,10 @@ body{
     }
     
     .iconeQuestion {
-        width: 50px; 
-        height: auto; 
+        width: 20px; 
+        height: 20px; 
         vertical-align: middle; 
-        margin-left: 60px;  
+        margin-left: 8px;  
     }
     
 /*QUATRIEME BLOC*/
@@ -174,16 +193,17 @@ body{
     appearance: none;
     background-color: #fff;
     border: 3px solid #ccc;
-    width: 50px; 
-    height: 50px; 
+    width: 70px; 
+    height: 70px; 
     cursor: pointer;
     position: relative;
     outline: none; 
+    margin-left: 70px;
 }
 
 .checkboxLabel {
-    font-size: 2rem; 
-    margin-left: 20px;
+    font-size: 3rem; 
+    margin-left: 40px;
   color: #82BE00;
 }
 

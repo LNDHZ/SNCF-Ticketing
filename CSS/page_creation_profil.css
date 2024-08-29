@@ -1,50 +1,62 @@
 body{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+  margin: 0 auto;
+  background-color: white;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  }
 
-  h3{
-      position: fixed;
+  .presentation{
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    color:#1e173c;
+  font-size: 30px;
+    padding:  1px 800px;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    text-align: center;
+      }
+
+h3{
+    position: fixed;
     bottom: 0;
     width: 100%;
     color: white;
     text-align: center;
     padding: 10px 0;
+    font-size: 2rem;
 }
 
-    .titre_principal{
-      color:#1e173c;
-    font-size: 17px;
-      padding: 10px 700px;
-      font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
-      text-align: center;
-      font-weight: bold;
-        }   
+   
+.titre_principal {
+  margin: 0;
+  font-size: 24px;
+}
   
-          /*HEADER*/
-    .header{
-        display : flex;
-        flex-direction: row;
-        height: 160px;
-        width: 100%;
-        border: solid;
-        background-color: #a0a09f;
-        border-color: #a0a09f;  
-        padding: 20px;
-        
-      }  .header h1 {
-        margin: 2; 
-        font-size: 4em; 
-        display: flex;
-      }
+              /*HEADER*/
+.header{
+  display : flex;
+ justify-content: space-between;
+ align-items: center;
+  height: 160px;
+  width: 100%;
+  border: solid;
+  background-color: #a0a09f;
+  border-color: #a0a09f;  
+  padding: 20px; 
+  
+}  .header h1 {
+  margin: 2; 
+  font-size: 4em; 
+  display: flex;
+}
     
-    
-      .logo_sncf{
-        height: 200px;
-        width: 200px;   
-     }    
-      
+   
+  .logo_sncf{
+    height: 350px;
+    width: 350px;
+  }
+
 /*PREMIER BLOC*/
 
  .Bienvenue {
@@ -53,8 +65,7 @@ body{
   text-align: center; 
 
 }
-
-.titre2{
+ .titre2{
   font-size: 3rem;
   display: flex;
   justify-content: center;

@@ -1,76 +1,95 @@
 body{
-    margin: 0 auto;
-    background-color: white;
-    height: 100%;
-    overflow: hidden;
-    position: relative;
-    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
-    }
-    
-    
-    .presentation{
-      color:#1e173c;
-    font-size: 22px;
-      padding:  1px 800px;
-      font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
-      text-align: center;
-        }
-
-        h3{
+  margin: 0 auto;
+  background-color: white;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  }
   
-          position: fixed;
-          bottom: 0;
-          width: 100%;
-          color: white;
-          text-align: center;
-          padding: 10px 0;
-      }
-    
-    
-     
-      /*HEADER*/
-.header{
-    display : flex;
-    flex-direction: row;
-    height: 160px;
-    width: 100%;
-    border: solid;
-    background-color: #a0a09f;
-    border-color: #a0a09f;  
-    padding: 20px; 
-    
-  }  .header h1 {
-    margin: 2; 
-    font-size: 4em; 
+   
+  .presentation{
+    flex-grow: 1;
     display: flex;
-  }
-
-
-  .logo_sncf{
-    height: 200px;
-    width: 200px;
-  }
+    justify-content: center;
+    color:#1e173c;
+  font-size: 30px;
+    padding:  1px 800px;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    text-align: center;
+      }
+  
+  h3{
     
-         /* menu de navigation*/
-     .nav{
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      font-size: 2rem;
+  }
+  
+    
+        /*HEADER*/
+  .header{
       display : flex;
-      justify-content:space-between;
-      list-style: none;
-      margin:3%;
-      padding: 0;   }   
-
-       .nav li {
-        margin: 0 70px }
-
-        .nav a {
-          text-decoration: none; 
-          color: #1e173c;
-          font-weight: bold;
-          font-size: 3rem;
-          font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+     justify-content: space-between;
+     align-items: center;
+      height: 160px;
+      width: 100%;
+      border: solid;
+      background-color: #a0a09f;
+      border-color: #a0a09f;  
+      padding: 20px; 
+      
+    }  .header h1 {
+      margin: 2; 
+      font-size: 4em; 
+      display: flex;
+    }
+  
+  
+    .logo_sncf{
+      height: 350px;
+      width: 350px;
+    }
+  
+   
+   .titre2{
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+   }
+  
+       /* menu de navigation*/
+       .nav {
+        list-style-type: none;
+        margin: 4%;
+        padding: 2%;
+    }
+  
+         .nav li {
+          display: inline;
+          margin: 0 70px }
+  
+          .nav a {
+            text-decoration: none; 
+            color: #1e173c;
+            font-weight: bold;
+            font-size: 3rem;
+            font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+          }
+  
+          .titre_principal {
+            margin: 0;
+            font-size: 24px;
         }
-    
-
+  
+  .Image1{
+    width: 800px;
+    height: 600px;
+  }
 
 /*PREMIER BLOC*/
 
