@@ -1,71 +1,64 @@
 body{
-  display: flex;
-  justify-content: space-between;
-  font-family: Arial, Helvetica, sans-serif;
-margin: 0 auto;
-padding:20px;
-background-color: white;
-height: 100%;
-overflow: hidden;
-position: relative;
-}
-
- 
-.presentation{
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
-  color:#1e173c;
-font-size: 30px;
-  padding:  1px 800px;
-  font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
-  text-align: center;
-    }
-
-h3{
+  margin: 0 auto;
+  background-color: white;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  }
   
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    font-size: 2rem;
-}
-
-  
-      /*HEADER*/
-.header{
-    display : flex;
-   justify-content: space-between;
-   align-items: center;
-    height: 160px;
-    width: 100%;
-    border: solid;
-    background-color: #a0a09f;
-    border-color: #a0a09f;  
-    padding: 20px;
-  } 
-    
-   .header h1 {
-    margin: 2; 
-    font-size: 4em; 
+   
+  .presentation{
+    flex-grow: 1;
     display: flex;
+    justify-content: center;
+    color:#1e173c;
+  font-size: 30px;
+    padding:  1px 800px;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    text-align: center;
+      }
+  
+  h3{
+    
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      font-size: 2rem;
   }
-
-
-  .logo_sncf{
-    height: 350px;
-    width: 350px;
-  }
-
- 
- .titre2{
-  font-size: 5rem;
-  display: flex;
-  justify-content: center;
-  font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
- }
+  
+    
+        /*HEADER*/
+  .header{
+      display : flex;
+     justify-content: space-between;
+     align-items: center;
+      height: 200px;
+      width: 100%;
+      border: solid;
+      background-color: #a0a09f;
+      border-color: #a0a09f;  
+      padding: 20px; 
+      
+    }  .header h1 {
+      margin: 2; 
+      font-size: 6em; 
+      display: flex;
+    }
+  
+    .logo_sncf{
+      height: 350px;
+      width: 350px;
+    }
+  
+   .titre2{
+    font-size: 6rem;
+    display: flex;
+    justify-content: center;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+   }
 
      /* menu de navigation*/
      .nav {
@@ -91,97 +84,104 @@ h3{
           font-size: 24px;
       }
 
-.Image1{
-  width: 800px;
-  height: 600px;
+/*PREMIERE PARTIE */
+
+.Image1 {
+width: 1200px;
+margin-right: 400px;
 }
-
-.Premier_Texte{
-  display: flex;
-  justify-content: center;
-  font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
-  font-size: 60px;
-  font-weight: bold;
-  color: #a0a09f;
-
-} 
-
 
 .PremierBloc {
-  display: flex; 
-  align-items: center;
+  display: flex;
+  align-items: center; 
+  justify-content: flex-start; 
 }
 
-.Div_Image_PremierBloc {
-  margin-right: 300px; 
+.Premier_Texte {
+  flex-grow: 1; 
+  font-size: 4rem; 
+  line-height: 1.5; 
+  font-weight: bold;
+}
+
+/*DEUXIEME PARTIE */
+
+.ChampsTexteBloc {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  max-width: 1300px; 
+  margin-left: 150px;
+}
+ 
+.ChampsTexteBloc label {
+  font-size: 2rem;
+  margin-bottom: 5px;
+  color: #1e173c;
+  font-weight: bold;
+}
+
+.ChampsTexteBloc input[type="text"],
+.ChampsTexteBloc input[type="email"],
+.ChampsTexteBloc textarea {
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.ChampsTexteBloc textarea {
+  resize: vertical;
+}
+
+.ChampsTexteBloc button {
+  padding: 50px 60px;
+  font-size: 2rem;
+  color: white;
+  background-color: #1e173c;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
   
 }
 
-.Image1 {
-  max-width: 600px; 
-  height: auto; 
+.ChampsTexteBloc button:hover {
+  background-color: #82be00;
 }
 
- 
-.DeuxiemeBloc {
+
+/*DEUXIEME PARTIE*/
+
+.NavBtn {
+  position: fixed; 
+  top: 50%; 
+  right: 800px; 
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 20px;
-  width: 48%;
+  flex-direction: column; 
+  gap: 30px; 
 }
 
-textarea {
-  width: 100%; /* Chaque encadré prend toute la largeur de son conteneur */
-  height: 80px; /* Hauteur des encadrés */
-  margin-bottom: 10px; /* Espacement entre les encadrés */
-  padding: 10px;
-  font-size: 20px;
+.NavBtn button {
+  padding: 10px 20px;
+  font-size: 4rem;
+  color:#1e173c;
+  background-color: #a0a09f;
+  border: none;
   border-radius: 5px;
-  border: 1px solid #ccc;
-  resize: vertical; 
+  cursor: pointer;
+  width:1200px;
+  height: 200px;
 }
 
-.encadre1 {
-    border: 3px solid #000; 
-    padding: 80px; 
-    width: 380px; 
-    height: 200px; 
-    box-sizing: border-box; 
-    border-color: #1e173c;
-    display: flex;
-    font-weight: bold;
-    font-size: 2rem; 
-    background-color: #D9D9D9;   
+.NavBtn button:hover {
+  background-color: #82be00; 
 }
-
-.encadre2 {
-  border: 3px solid ; 
-  padding: 70px; 
-  width: 800px; 
-  height: 80px; 
-  box-sizing: border-box; 
-  border-color: #1e173c;
-  font-weight: bold; 
-  font-size: 2rem;
-  background-color: #D9D9D9;
-}
-
-.TroisiemeBloc {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  width: 48%; 
-  float:left; 
-  margin-left: 35px;
-  margin-top: 5%;
-}
-
 
          /*FOOTER*/
 
          .footer{
-            height: 220px;
+            height: 280px;
             border: solid;
             background-color: #1e173c;
             border-color: #1e173c;

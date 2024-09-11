@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SNCF TICKETING</title>
     <link rel="stylesheet" href="/CSS/page_accueil.css" />
+    <script src="/Page_accueil.js"></script>
+
 </head>
 
 <!--BODY-->
@@ -19,7 +21,8 @@
                     <h1 class="titre_principal">SNCF TICKETING</h1>
                 </div>
                         <nav class="nav">
-                            <li><a href="/HTML/Page_utilisateur.html">Connexion</a></li>
+                            <li><a href="/HTML/Page_utilisateur.html">Se connecter</a></li>
+                            <li><a href="/HTML/page_creation_profil.html">Créer un compte</a></li>
                         </nav>
         </header>  
       
@@ -29,66 +32,71 @@
             <div class="Bienvenue">
                 <h2 class="titre2"> Bienvenue sur votre espace : <span style="color:#82BE00;"> SNCF Ticketing </span></h2>
             </div>
-
             <div class="PremierBloc">
-                <div class="Div_Image_PremierBloc">
-                    <img src="/Images/ilu1.png" alt="ImagePremiere" class="Image1"/>
-                </div>
-                <div class="Dix_Premier_Texte">
+                    <img src="/Images/ilu1.png" alt="ImagePremiere" class="Image1"/>             
                     <p class="Premier_Texte">
-                        SNCF Ticketing vous permet de créer  et de gérer des tickets <br> d'incidents ou de demande d'aide. <br>
+                        <span style="color:#82BE00;"> SNCF Ticketing </span> vous permet de créer  et de gérer des tickets <br> d'incidents ou de demande d'aide. <br>
                         Un utilisateur répondra et traitera toutes vos demandes.
-                    </p>
-                </div>
+                    </p>               
             </div>
-
-            <!--DEUXIEME BLOC-->
-
-            <div class="DeuxiemeBloc">
-                <div class="PremierEncadre">
-                    <textarea class="encadre1" placeholder="Mon mot de passe"></textarea>    
-                </div>
-                <div class="DeuxiemeEncadre">
-                    <textarea class="encadre1" placeholder="Mes informations"></textarea>
-                </div>
-                <div class="TroisiemeEncadre">
-                    <textarea class="encadre1" placeholder="Contenu"></textarea>
-                </div>
-                <div class="QuatriemeEncadre">
-                    <textarea class="encadre1" placeholder="Contenu"></textarea>
-                </div>
-                <div class="CinquiemeEncadre">
-                    <textarea class="encadre1" placeholder="Contenu"></textarea>
-                </div>
-            </div>
-
-            <!--TROISIEME BLOC-->
-
-            <div class="TroisiemeBloc">
-                <div class="PremierEncadre">
-                    <textarea class="encadre2" placeholder="En cas de soucis"></textarea>    
-                </div>
-                <div class="DeuxiemeEncadre">
-                    <textarea class="encadre2" placeholder="Vous pouvez"></textarea>
-                </div> 
-                <div class="TroisiemeEncadre">
-                    <textarea class="encadre2" placeholder="Nous contac"></textarea>
-                </div>                     
-            </div>
-
-
-
+            <div class="ChampsTexteBloc">
+                <label for="nom">Nom:</label>
+                <input type="text" id="nom" name="nom" placeholder="Votre nom" />              
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Votre email" />
+                <label for="demande">Votre message:</label>
+                <textarea id="demande" name="demande" rows="4" placeholder="Décrivez votre demande ici..."></textarea>
+                <button type="submit">Envoyer</button>
+            </div>          
+            <div class="NavBtn">
+                <button onclick="location.href='/HTML/Page1.html'">Mes informations</button>
+                <button onclick="location.href='/HTML/Page2.html'">Mes informations</button>
+                <button onclick="location.href='/HTML/Page2.html'">Mes informations</button>
+                <button onclick="location.href='/HTML/Page3.html'">Les tickets</button>
+              </div>
+              
         <footer class="footer">
             <img class="logo_sncf2" src="/Images/logo-removebg-preview.png" alt="logo_sncf2"/>
                 <div class="contenu_footer">
                     <h3>SNCF Ticketing | Version 1.1 | e-SNCF ©2024|CGU|Mentions légales </h3>
                 </div>
         </footer>
+    </section>
    
                     
       
-        
-            
+        <!-- JAVASCRIPT -->
+    <script>
+        function validateForm() {
+            const nom = document.getElementById('nom').value;
+            const email = document.getElementById('email').value;
+            const demande = document.getElementById('demande').value;
+
+            if (nom === "" || email === "" || demande === "") {
+                alert("Tous les champs doivent être remplis avant l'envoi.");
+                return false;
+            }
+            alert("Votre demande a été envoyée avec succès, nous vous répondrons dans les plus brefs délais !");
+            return true;
+        }
+
+const demande = document.getElementById('demande');
+const maxChars = 400;
+const counter = document.createElement('div');
+counter.id = 'charCounter';
+counter.innerHTML = `0/${maxChars}`;
+demande.parentNode.insertBefore(counter, demande.nextSibling);
+
+demande.addEventListener('input', function() {
+    const charCount = demande.value.length;
+    counter.innerHTML = `${charCount}/${maxChars}`;
+    if (charCount > maxChars) {
+        counter.style.color = 'red';
+    } else {
+        counter.style.color = 'black';
+    }
+});
+</script>
 
 
 
@@ -103,6 +111,6 @@
 
 
 
-    </section>
+   
 </body>
 </html>

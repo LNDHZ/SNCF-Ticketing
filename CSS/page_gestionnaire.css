@@ -35,7 +35,7 @@ body{
       display : flex;
      justify-content: space-between;
      align-items: center;
-      height: 160px;
+      height: 200px;
       width: 100%;
       border: solid;
       background-color: #a0a09f;
@@ -44,7 +44,7 @@ body{
       
     }  .header h1 {
       margin: 2; 
-      font-size: 4em; 
+      font-size: 6em; 
       display: flex;
     }
   
@@ -80,12 +80,12 @@ body{
             font-size: 3rem;
             font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
           }
+
   
           .titre_principal {
             margin: 0;
             font-size: 24px;
         }
-  
   
         .contenu {
           padding: 100px;
@@ -97,8 +97,8 @@ body{
         display: flex;
         justify-content: space-between;
         width: 100%;
-     
     }
+
     .ClotureTickets,.ListeTickets{
       width: 45%; 
       height: 800px;
@@ -110,13 +110,15 @@ body{
     
     .ListeTickets h2, .ClotureTickets h2 {
       margin-top: 5px;
-      font-size: 3rem;
+      font-size: 4rem;
       text-align: center;
+      border: 1px solid;
+      border-color: #1e173c
 
   }
 
   .ListeTickets h4, .ClotureTickets h4 {
-    font-size: 30px;
+    font-size: 40px;
     color:#1e173c;
     font-weight: bold;
   }
@@ -130,13 +132,12 @@ body{
       border-bottom: none;
   }
     
-
     .ContenuTicket {
         margin: 5px 0;
         color: #555;
-        font-size: 25px;
+        font-size: 40px;
+        font-weight: bold;
     }
-    
 
     .StatutTicket {
       font-weight: bold;
@@ -157,11 +158,12 @@ body{
       background-color: #0056b3;
   }
 
+ 
          
         /*FOOTER*/
 
         .footer{
-           height: 220px;
+           height: 280px;
            border: solid;
            background-color: #1e173c;
            border-color: #1e173c;

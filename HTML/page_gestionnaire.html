@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SNCF TICKETING</title>
     <link rel="stylesheet" href="/CSS/page_gestionnaire.css" />
+    <script src="/JS/page_gestionnaire.js"></script>
+
 </head>
 
 <!--BODY-->
@@ -55,6 +57,15 @@
                 </section>
             </div>
         </main>     
+    <div class="Statut">
+        <select id="StatutFiltrer">
+            <option value="Tous">Tous les tickets</option>
+            <option value="En cours de traitement">En cours de traitement</option>
+            <option value="Clôturé">Clôturé</option>
+        </select>
+        <input type="text" id="searchInput" placeholder="Rechercher des tickets...">
+    </div>
+        
 
         <footer class="footer">
             <img class="logo_sncf2" src="/Images/logo-removebg-preview.png" alt="logo_sncf2"/>
@@ -62,5 +73,24 @@
                     <h3>SNCF Ticketing | Version 1.1 | e-SNCF ©2024|CGU|Mentions légales </h3>
                 </div>
         </footer>
-   
-                    
+    </section>
+
+    <script>
+// Filtrer les tickets en fonction du statut sélectionné
+function filterTickets(status) {
+    const allTickets = document.querySelectorAll('.ticket');
+    
+    allTickets.forEach(ticket => {
+        const ticketStatus = ticket.querySelector('.StatutTicket').textContent.split(':')[1].trim();
+        if (status === 'all' || ticketStatus === status) {
+            ticket.style.display = 'block';
+        } else {
+            ticket.style.display = 'none';
+        }
+    });
+};
+        
+    </script>
+</body>
+</html>
+            

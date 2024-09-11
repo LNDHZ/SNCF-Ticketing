@@ -27,18 +27,13 @@ h3{
     font-size: 2rem;
 }
 
-   
-.titre_principal {
-  margin: 0;
-  font-size: 24px;
-}
   
               /*HEADER*/
 .header{
   display : flex;
  justify-content: space-between;
  align-items: center;
-  height: 160px;
+  height: 200px;
   width: 100%;
   border: solid;
   background-color: #a0a09f;
@@ -47,7 +42,7 @@ h3{
   
 }  .header h1 {
   margin: 2; 
-  font-size: 4em; 
+  font-size: 6em; 
   display: flex;
 }
     
@@ -66,7 +61,7 @@ h3{
 
 }
  .titre2{
-  font-size: 3rem;
+  font-size: 5rem;
   display: flex;
   justify-content: center;
   font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
@@ -87,90 +82,65 @@ h3{
 .main-container {
   display: flex;
   justify-content: center; 
-  align-items: flex-start;
-  width: 100%;
+  align-items: center;
+  height: 70vh;
+  margin: 150px;
+}
+
+.Ensemble {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 60%;
   padding: 20px;
   
-}
+ }
 
 .input-rectangle {
-  width: 600px; 
-  height: 90px; 
-  padding: 10px; 
-  border: 3px solid #82BE00;
+  width:100%;
+  height: 150px; 
+  padding: 15px; 
+  border: 2px solid #82BE00;
   border-radius: 5px; 
-  font-size: 25px; 
+  font-size: 3rem; 
   font-weight: bold;
   text-align: center;
   font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
-
-}
-
-.input-rectangle2 {
-  width: 1000px; 
-  height: 90px; 
-  padding: 10px; 
-  border: 3px solid #82BE00;
-  border-radius: 5px; 
-  font-size: 25px; 
-  font-weight: bold;
-  text-align: center;
-  font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
-
-}
-.input-rectangle3 {
-  width: 90px; 
-  height: 120px;}
-
-.form-container {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  width: fit-content;
-  margin: 2%; 
-
-}
-
-.form-container2 {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  width: fit-content;
-  margin: 2%; 
-
 }
 
 .save-button {
-  width: 600px;
-  height: 80px;
-  background-color: #82BE00;
+  padding: 15px 30px; 
+  font-size: 2rem;
   color: white;
+  background-color: #1e173c;
   border: none;
   border-radius: 5px;
-  font-size: 18px;
   cursor: pointer;
-  margin-top: 30px; 
 }
+
 .save-button:hover {
   background-color: #6DA400; 
 }
 
+.input-rectangle3 {
+  width: 60px; 
+  height: 60px; 
+}
 
 .image-container {
-  margin-left: auto; 
-  padding: 300px; 
+  display: none;
   }
    
-  .image_droite {
-    width: 900px; 
-    height: auto; 
-}
+  .password{
+    position: relative;
+    width: 100%;
+  }
 
 
              /*FOOTER*/
     
              .footer{
-              height: 220px;
+              height: 280px;
               border: solid;
               background-color: #1e173c;
               border-color: #1e173c;

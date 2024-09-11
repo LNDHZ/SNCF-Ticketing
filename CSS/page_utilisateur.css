@@ -7,11 +7,8 @@ body{
     }
     
     h3{
-  
         position: fixed;
-        bottom: 0;
         width: 100%;
-        color: white;
         text-align: center;
         padding: 10px 0;
         font-size: 2rem;
@@ -34,7 +31,7 @@ body{
     display : flex;
    justify-content: space-between;
    align-items: center;
-    height: 160px;
+    height: 200px;
     width: 100%;
     border: solid;
     background-color: #a0a09f;
@@ -52,7 +49,7 @@ body{
       }
        
  .titre2{
-    font-size: 3rem;
+    font-size: 6rem;
     display: flex;
     justify-content: center;
     font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
@@ -63,11 +60,10 @@ body{
         font-size: 24px;
     }
 
-      /*PREMIER BLOC */
 
       .PremierBloc {
         display: flex;    
-        align-items: flex-start; 
+        align-items:flex-start; 
         justify-content: space-between; 
         margin-top: 20px;
         height: 400px;
@@ -75,21 +71,6 @@ body{
         padding: 10px;
         box-sizing: border-box;
     }
-    
-    .titreInformatif{
-        display: flex;
-        align-items: center;
-        line-height: 1.5;
-        font-size: 3rem;
-        border: 1px solid;
-        border-color: #82BE00;
-       color: #1e173c;
-        text-align: center;
-        border-radius: 6px;
-        margin-top: 5%;
-        width: 800px;
-        height: 80px;
-      }
 
     .Bienvenue {
         flex: 1; 
@@ -109,23 +90,13 @@ body{
 }
 
 .imageAgrandie {
-    width: 100%;
     height: auto;
-    max-width: 500px; 
+    width: 90%;
     border-radius: 8px;
     margin-top: 20px;
+    margin-right: 2%;
 }
     
-
- 
-       .separateur {
-        width: 100%;
-        height: 2px; 
-        background-color: #1e173c;
-
-    }
-       
-
     
     @media (max-width: 768px) {
         .PremierBloc {
@@ -137,51 +108,57 @@ body{
             text-align: center; 
         }
     }
-
-    .imageAgrandie {
-        max-width: 90%; 
-        height: auto;
-        margin-right: 2%;
-    }  
         
+/*DEUXIEME BLOC*/
 
-    /*DEUXIEME BLOC*/ /*TROISIEME BLOC */
+.Bienvenue{
+    text-align: center;
+}
 
-     .DeuxiemeBloc,.TroisiemeBloc {
-        margin-top: -50px;
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 20px;
+.DeuxiemeBloc {
+    display: flex;    
+        align-items:flex-start; 
+        justify-content: space-between; 
+        margin-top: 20px;
+        height: 400px;
+        margin-bottom: 500px;
+        padding: 10px;
         box-sizing: border-box;
     }
+
+
+.DeuxiemeBloc .checkboxLabel {
+    font-size: 4rem; 
+    margin-left: 20px;
+    color: #82BE00;
+    margin-bottom: 20px;
+    border:1px solid;
+    border-color: #1e173c;
     
-    .champSaisie input {
-        width: 1600px; 
-        height: 110px; 
-        padding: 5px; 
-        font-size: 2rem; 
-        border: 2px solid #ccc; 
-        border-radius: 4px; 
-        text-align: center;
-        margin-left: 5%;
-        font-weight: bold;
-        margin-top: 10px;
-    }
-    .rectangle {
-        width: 100%; 
-        padding: 8px; 
-        box-sizing: border-box; 
-    }
-    
-    .iconeQuestion {
-        width: 20px; 
-        height: 20px; 
-        vertical-align: middle; 
-        margin-left: 8px;  
-    }
+   
+}
+
+.inputField {
+    text-align: center;
+    width: 50%; 
+    padding: 80px;
+    font-size: 4rem;
+    border: 2px solid #1e173c;
+    border-radius: 5px;
+    margin-bottom: 30px; 
+    font-weight: bold;
+}
+
+.separateur2{
+    width:200%;
+    height: 2px; 
+    background-color: #1e173c;
+    margin: 110px;
+}
+
     
 /*QUATRIEME BLOC*/
+
 
 .ContainerCheckbox{
     margin-top: 50px;
@@ -205,6 +182,7 @@ body{
     font-size: 3rem; 
     margin-left: 40px;
   color: #82BE00;
+  margin-bottom: 20px;
 }
 
 /*CINQUIEME BLOC*/
@@ -246,7 +224,7 @@ body{
 /*FOOTER*/
 
 .footer{
-    height: 220px;
+    height: 280px;
     border: solid;
     background-color: #1e173c;
     border-color: #1e173c;

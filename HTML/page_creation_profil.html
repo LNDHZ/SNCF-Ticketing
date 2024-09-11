@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SNCF TICKETING</title>
     <link rel="stylesheet" href="/CSS/page_creation_profil.css" />
+    <script src="/JS/Page_creation_profil.js"></script>
   </head>
 
   <!--BODY-->
@@ -19,9 +20,6 @@
         </div>
       </header>
 
-
-      
-
       <!--PREMIER BLOC-->
 
       <div class="Bienvenue">
@@ -30,13 +28,11 @@
           <span style="color: #82be00"> SNCF Ticketing </span>
         </h2>
       </div>
-
       <hr class="Separateur1" />
-
 
       <!--DEUXIEME BLOC-->
         <div class="main-container">
-           <div class="form-container">
+          <div class="Ensemble">
                 <input type="text" class="input-rectangle" placeholder="Nom">
                 <input type="text" class="input-rectangle" placeholder="Prénom">
                 <input type="text" class="input-rectangle" placeholder="Numéro de CP">
@@ -46,27 +42,12 @@
                 <input type="checkbox" class="input-rectangle3">
                 <button class="save-button">Enregistrer</button>     
            </div>
-
-
-           <div class="form-container2">
-            <input type="text" class="input-rectangle2" placeholder="Champs Saisie">
-            <input type="text" class="input-rectangle2" placeholder="Champs Saisie">
-            <input type="text" class="input-rectangle2" placeholder="Champs Saisie">
-            <input type="text" class="input-rectangle2" placeholder="Champs Saisie">
-            <input type="text" class="input-rectangle2" placeholder="Champs Saisie">         
-            <input type="text" class="input-rectangle2" placeholder="Champs Saisie">
-            <input type="text" class="input-rectangle2" placeholder="Champs Saisie">
-            </div>
-
             <div class="image-container">
                <img src="/Images/ilu1.png" alt="Image2" class="image_droite">
             </div>
-       </div>
-
-        
-  
-
-
+        </div>
+       
+        <!--FAUT IL AJOUTER UNE CHECKBOX POUR VALIDER DE QUELQUES CONDITIONS ???-->
 
 <!--FOOTER-->
 
@@ -83,5 +64,48 @@
         </div>
       </footer>
     </section>
+
+    <script>
+      function validateForm() {
+        // Récupérer les valeurs des champs
+        const nom = document.getElementById('nom').value;
+        const prenom = document.getElementById('prenom').value;
+        const cp = document.getElementById('cp').value;
+        const email = document.getElementById('email').value;
+        const mdp = document.getElementById('mdp').value;
+        const mdp2 = document.getElementById('mdp2').value;
+        const terms = document.getElementById('terms').checked;
+
+        // Validation des champs
+        if (nom === "" || prenom === "" || cp === "" || email === "" || mdp === "" || mdp2 === "") {
+          alert("Tous les champs doivent être remplis.");
+          return false;
+        }
+
+        // Vérifier le format de l'email
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+          alert("Veuillez entrer une adresse email valide.");
+          return false;
+        }
+
+        // Vérifier que les mots de passe correspondent
+        if (mdp !== mdp2) {
+          alert("Les mots de passe ne correspondent pas.");
+          return false;
+        }
+
+        // Vérifier que la case des conditions est cochée
+        if (!terms) {
+          alert("Vous devez accepter les conditions.");
+          return false;
+        }
+
+        // Si toutes les validations sont passées
+        alert("Votre compte a été créé avec succès !");
+        return true;
+      }
+    </script>
+
   </body>
 </html>

@@ -7,10 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SNCF TICKETING</title>
     <link rel="stylesheet" href="/CSS/page_utilisateur.css" />
+    <script src="/JS/Page_utilisateur.js"></script>
+
 </head>
 
 <!--BODY-->
-
 <body>
     <section>
         <header class="header">
@@ -24,33 +25,26 @@
         <div class="PremierBloc">
            <div class="Bienvenue">
                <h2 class="titre2"> Je suis utilisateur : <span style="color:#82BE00;"> SNCF Ticketing </span></h2>
-               <h3 class="titreInformatif">Titre informatif</h3>
-               <div class="separateur"></div>
            </div>     
            <div class="imageDroite">
             <img src="/Images/page_accomp_clients.jpg" alt="image3" class="imageAgrandie">
            </div>
        </div>  
 
-       <!--DEUXIEME BLOC -->
+
+       <!--DEUXIEME BLOC-->
+
        <div class="DeuxiemeBloc">
-           <div class="Bienvenue">
-               <h3 class="titreInformatif">Titre informatif <img src="/Images/question-mark-vector-icon.jpg" alt="interrogation" class="iconeQuestion"></h3>
-           </div>
-           <div class="champSaisie">
-            <input type="text" class="rectangle" placeholder="Champs de saisie">
-           </div>
-       </div>
-
-       <!--TROISIEME BLOC-->
-       <div class="TroisiemeBloc">
-            <div class="Bienvenue">
-               <h3 class="titreInformatif">Titre informatif <img src="/Images/question-mark-vector-icon.jpg" alt="question mark" class="iconeQuestion"> </h3> 
-           </div>
-            <div class="champSaisie">
-              <input type="text" class="rectangle" placeholder="Champs de saisie">
+            <div class="formulaire">
+        <label for="label" class="checkboxLabel">Titre informatif</label>
+        <div class="separateur2"></div>
+        <label for="label" class="checkboxLabel">Titre informatif</label>
             </div>
-
+        </div>
+    <div class="champsSaisie">
+        <input type="text" id="infoInput" class="inputField" placeholder="Champs de saisie"/>       
+    </div>
+        
          <!--QUATRIEME BLOC-->   
             <div class="ContainerCheckbox">
                 <input type="checkbox" id="checkbox1" class="checkbox">
@@ -59,6 +53,7 @@
        
        <!--CINQUIEME BLOC-->
             <div class="btnContainer">
+                <button onclick="showAlert()" class="btn BtnConnexion">Bienvenue</button>
                 <a href="/HTML/page_profil.html" class="btn BtnConnexion">Connexion</a>
                 <a href="/HTML/page_creation_profil.html" class="btn BtnCompte">Creation de compte </a>
                 <a href="/HTML/Page_accueil.html" class="btn BtnMdpOublie">Mot de passe oublié</a>          
@@ -71,12 +66,7 @@
                 <div class="contenu_footer">
                     <h3>SNCF Ticketing | Version 1.1 | e-SNCF ©2024|CGU|Mentions légales </h3>
                 </div>
-        </footer>
-   
-                    
-
-
-        
+        </footer>      
     </section>
 </body>
 </html>
