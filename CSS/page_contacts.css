@@ -1,95 +1,91 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-            /*HEADER*/
-  
-              /*HEADER*/
-              .header{
-                display : flex;
-               justify-content: space-between;
-               align-items: center;
-                height: 200px;
-                width: 100%;
-                border: solid;
-                background-color: #00205b;
-                border-color: #00205b;  
-                padding: 20px; 
-                
-              }  .header h1 {
-                margin: 2; 
-                font-size: 6em; 
-                display: flex;
-                color: #e6e6e6;
-              }
-                  
-                 
-                .logo_sncf{
-                  height: 350px;
-                  width: 350px;
-                }
-              
- 
-       /* menu de navigation*/
-       .nav {
-        list-style-type: none;
-        padding: 1%;
-        margin-top: 200px;
-    }
-  
-         .nav li {
-          display: inline;
-          margin: 0 50px }
-  
-          .nav a {
-            text-decoration: none; 
-            color: #e6e6e6;
-            font-weight: bold;
-            font-size: 2rem;
-            font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
-          }
+body{
+  font-family: Arial, sans-serif;
+  margin: 0 auto;
+  padding: 0;
+  background-color: white;
+  height: 100vh;
 
+  
+  }
+
+  .presentation{
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    color:#00205b;
+  font-size: 30px;
+    padding:  1px 800px;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    text-align: center;
+      }
+  
+      h3{
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        font-size: 2rem;
+    }
+   
+        /*HEADER*/
+        .header{
+          display : flex;
+         justify-content: space-between;
+         align-items: center;
+          height: 280px;
+          width: 100%;
+          border: solid;
+          background-color: #00205b;
+          border-color: #00205b;  
+          padding: 20px; }
+    
+          
+          .header h1 {  
+            margin: 0; 
+            font-size: 5em; 
+           text-align: center;
+           color: #e6e6e6;
+          }
+      
+    
+         .logo_sncf{
+          height: 470px;
+          width: 450px;
+         }
+              
           
         .titre_principal {
             margin: 0;
             font-size: 24px;
         }
 
-          /*BLOC GENERAL */
-.BlocGénéral {
-    display: flex;
-    justify-content: space-between;
-    padding: 30px;
-    margin: 40px;
-    border-radius: 10px;
-    background-color: #e6e6e6;
-    gap: 20px;
-    align-items: flex-start;
-    height: auto; 
+        /*Bandeau Accueil*/
+
+.Bienvenue{
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 150px;
   }
 
-          .Bienvenue{
-            display:flex;
-            justify-content: center;
-          }
-        
+  .titre2 {
+    text-align: center;
+    font-size: 6rem;
+    margin: 0;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;}
+  
 
-          .presentation {
-            display: flex;
-            justify-content: center;
-            color: #1e173c;
-            font-size: 2rem;
-            font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
-            text-align: center;
-          }
-               
-  .charCounter {
-    font-size: 2px;
-    color: black;
-    margin-top: 5px;}   
-
+/* GENERAL BLOCK */
+.BlocGénéral {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px; 
+  border-radius: 10px;
+  background-color: #e6e6e6;
+  gap: 20px;
+  height: auto; 
+}
   
   /*Bandeau Accueil*/
   
@@ -99,122 +95,133 @@ body {
     justify-content: center;
     font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;}
   
-  /*PREMIERE PARTIE */
+/*CONTAINER */
   
-
-.Image1 {
-    width: 50%; 
-    float: left;
-    margin-right: 20px;
+.container {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
 }
 
-  
-  /*DEUXIEME PARTIE */
-  
-  .ChampsTexteBloc {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    width: 45%;
+.image-container {
+  flex: 1;
+  max-width: 35%;
+  margin-top: -200px;
+  margin-left: -200px;
 }
 
-   
-  .ChampsTexteBloc label {
-    font-size: 3rem;
-    margin-bottom: 5px;
-    color: #82be00;
-    font-weight: bold;
-  }
-  
-  .ChampsTexteBloc input[type="text"],
-  .ChampsTexteBloc input[type="email"],
-  .ChampsTexteBloc textarea {
-    padding: 10px;
-    margin-bottom: 20px;
-    font-size: 2rem;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-  }
-  
-  
-  .ChampsTexteBloc button {
-    padding: 50px 60px;
-    font-size: 2rem;
-    color: white;
-    background-color: #00205b;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    
-  }
-  
-  .ChampsTexteBloc button:hover {
-    background-color: #82be00;
-  }/*DEUXIEME PARTIE */
+.image-container img {
+  width: 100%; 
+  height: auto; 
+}
 
-.ChampsTexteBloc {
-    margin-top: 100px;
-    display: flex;
-    flex-direction: column;
-    max-width: 1300px; 
-    margin-left: 150px;
-  }
-   
-  .ChampsTexteBloc label {
-    font-size: 2rem;
-    margin-bottom: 5px;
-    color: #1e173c;
-    font-weight: bold;
-  }
-  
-  .ChampsTexteBloc input[type="text"],
-  .ChampsTexteBloc input[type="email"],
-  .ChampsTexteBloc textarea {
-    padding: 10px;
-    margin-bottom: 20px;
-    font-size: 2rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .ChampsTexteBloc textarea {
-    resize: vertical;
-  }
-  
-  
-  .ChampsTexteBloc button:hover {
-    background-color: #82be00;
-  }
-  
-        /* FOOTER */
-.footer {
-    height: 280px;
-    background-color: #00205b;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
+.form-container {
+    background-color: #e6e6e6;
+    border-radius: 8px;
+    border: 6px solid #00205b;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
     width: 100%;
-    bottom: 0;
+    padding: 50px;
+    box-sizing: border-box;
 }
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.form-container label {
+  display: block;
+  font-weight: bold;
+  margin: 20px 0 5px;
+  padding: 8px;
+  border: 1px solid #e6e6e6;
+  border-radius: 4px;
+  
+}
+
+.form-container input, .form-container textarea {
+  border-radius: 4px;
+    border: 2px solid #ddd;
+    margin-bottom: 15px;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #00205b;
+    font-size: 25px;
+}
+
+
+
+.form-container button {
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  background-color: #00205b;
+  color:#e6e6e6;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+  font-size: 20px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-container button:hover {
+  background-color: #001f4d;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+
+}
+  
+
+
+  /* FOOTER */
+.footer {
+  height: 280px;
+  background-color: #00205b;
+  color: white;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  margin: 0; 
+  padding: 0; 
+  margin-top: 20px; 
+}     
             
-            .footer h3 {
-                font-size: 2rem;
-                color: white;
-                margin: 0;
-                padding: 10px 0;
-            }
-  
-          
-            .logo_sncf2 {
-                position: absolute;     
-                left: 10px; 
-                bottom: 10px; 
-                width: 420px;
-                height: auto;
-            }
-  
-        
+.footer h3 {
+  font-size: 2rem;
+  color: white;
+  margin: 0;
+  padding: 10px 0;
+}
+
+
+.logo_sncf2 {
+  position: absolute;     
+  left: 10px; 
+  bottom: 10px; 
+  width: 380px;
+  height: auto;
+}
+
+
+.footer-link {
+color: #e6e6e6; 
+text-decoration: none; 
+}
+
+.footer-link:hover {
+text-decoration: underline; 
+}
+
   
         
   

@@ -12,24 +12,10 @@
         function showAlert() {
             alert("Bienvenue sur votre page contacts, SNCF Ticketing!");
         }
-       
+
         window.onload = function() {
             showAlert();  
-        };
 
-        function validateForm() {
-            const nom = document.getElementById('nom').value;
-            const email = document.getElementById('email').value;
-            const demande = document.getElementById('demande').value; 
-            if (nom === "" || email === "" || demande === "") {
-                alert("Tous les champs doivent être remplis avant l'envoi.");
-                return false;
-            }
-            alert("Votre demande a été envoyée avec succès, nous vous répondrons dans les plus brefs délais !");
-            return true;
-        }
-
-        window.onload = function() {
             const demande = document.getElementById('demande');
             const maxChars = 400;
             const counter = document.createElement('div');
@@ -42,8 +28,20 @@
                 counter.innerHTML = `${charCount}/${maxChars}`;
                 counter.style.color = charCount > maxChars ? 'red' : 'black';
             });
-            showAlert();
         };
+
+        function validateForm() {
+            const nom = document.getElementById('nom').value;
+            const email = document.getElementById('email').value;
+            const demande = document.getElementById('demande').value;
+
+            if (nom === "" || email === "" || demande === "") {
+                alert("Tous les champs doivent être remplis avant l'envoi.");
+                return false;
+            }
+            alert("Votre demande a été envoyée avec succès, nous vous répondrons dans les plus brefs délais !");
+            return true;
+        }
     </script>
 
 </head>
@@ -57,40 +55,63 @@
                <div class="presentation">
                     <h1 class="titre_principal">SNCF TICKETING</h1>
                 </div>
-                        <nav class="nav">
-                            <li><a href="/HTML/Page_utilisateur.html">Se connecter</a></li>
-                            <li><a href="/HTML/page_creation_profil.html">Créer un compte</a></li>
-                        </nav>
-        </header>  v class="ChampsTexteBloc">
+        </header>  
                    
       
 
 <!--PREMIER BLOC-->    
             <div class="BlocGénéral">
                 <div class="Bienvenue">
-                    <h2 class="titre2"> Bienvenue sur votre espace : </span></h2>
-                    <h2 class="titre2"><span style="color:#82BE00;">SNCF Ticketing </span></h2>
+                    <h2 class="titre2"> 
+                        <span style="color: #00205b;">Bienvenue sur votre page :</span>
+                        <span style="color:#82BE00;"> Contacts</span>
+                    </h2>
                 </div>
-                <div class="PremierBloc">
-                    <img src="/Images/image_page_contact.png" alt="ImagePremiere" class="Image1"/>                         
+                <div class="container">
+                    <div class="image-container">
+                        <img src="/Images/image_page_contact.png" alt="ImagePremiere" class="Image1"/>       
+                    </div>
+                    <div class="form-container">
+                        <h1>Contactez-nous</h1>
+                        <form action="send_mail.php" method="POST">
+                            <label for="name">Nom :</label>
+                            <input type="text" id="name" name="name" required>
+
+                            <label for="prenom">Prénom :</label>
+                            <input type="text" id="prenom" name="prenom" required>
+                
+                            <label for="email">Email :</label>
+                            <input type="email" id="email" name="email" required>
+                
+                            <label for="subject">Sujet :</label>
+                            <input type="text" id="subject" name="subject" required>
+
+                            <label for="CP">Numéro de CP (identifiant SNCF):</label>
+                            <textarea id="message" name="message" rows="2" required maxlength="8" ></textarea>
+                            <p id="charCount">0/8 caractères</p>
+                
+                            <label for="message">Message :</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                
+                            <button type="submit">Envoyer</button>
+                        </form>
+                    </div>
                 </div>
-                <div>
-                    <label for="nom">Nom:</label>
-                    <input type="text" id="nom" name="nom" placeholder="Votre nom" />              
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" placeholder="Votre email" />
-                    <label for="demande">Votre message:</label>
-                    <textarea id="demande" name="demande" rows="4" placeholder="Décrivez votre demande ici..."></textarea>
-                    <button type="submit">Envoyer</button>
-                </div>          
-            </div>
               
-        <footer class="footer">
-            <img class="logo_sncf2" src="/Images/logo-removebg-preview.png" alt="logo_sncf2"/>
-                <div class="contenu_footer">
-                    <h3>SNCF Ticketing | Version 1.1 | e-SNCF ©2024|CGU|Mentions légales </h3>
-                </div>
-        </footer>
+            <footer class="footer">
+                <img class="logo_sncf2" src="/Images/logo-removebg-preview.png" alt="logo_sncf2"/>
+                    <div class="contenu_footer">
+                        <h3>SNCF Ticketing |
+                            <a href="/version.html"  class="footer-link">Version 1.1</a> |
+                            <a href="/cgu.html" class="footer-link">CGU</a> | 
+                            <a href="/mentions-legales.html" class="footer-link">Mentions légales</a> | 
+                            <a href="/HTML/page_contacts.html" class="footer-link"> Contactez-nous</a>
+                             e-SNCF ©2024 
+                        </h3>
+                    </div>
+            </footer>
+
+
         <!-- JAVASCRIPT -->
     <script>
         function validateForm() {
