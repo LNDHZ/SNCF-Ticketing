@@ -1,5 +1,6 @@
 body{
     margin: 0 auto;
+    padding: 0;
     background-color: white;
     height: 100%;
     overflow: hidden;
@@ -60,17 +61,19 @@ body{
         font-size: 24px;
     }
 
+    /* PREMIER BLOC */
 
-      .PremierBloc {
+     .PremierBloc {
         display: flex;    
         align-items:flex-start; 
         justify-content: space-between; 
         margin-top: 20px;
         height: 400px;
-        margin-bottom: 20px;
-        padding: 10px;
+        margin : 20px auto;
+        padding: 20px;
         box-sizing: border-box;
-    }
+    } 
+
 
     .Bienvenue {
         flex: 1; 

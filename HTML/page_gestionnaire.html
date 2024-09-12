@@ -9,6 +9,16 @@
     <link rel="stylesheet" href="/CSS/page_gestionnaire.css" />
     <script src="/JS/page_gestionnaire.js"></script>
 
+    <script>
+        function showAlert() {
+            alert("Bienvenue sur votre page gestionnaire, SNCF Ticketing!");
+        }
+       
+        window.onload = function() {
+            showAlert();  
+        };
+    </script>
+
 </head>
 
 <!--BODY-->
@@ -74,9 +84,9 @@
                 </div>
         </footer>
     </section>
-
+<!--
     <script>
-// Filtrer les tickets en fonction du statut sélectionné
+
 function filterTickets(status) {
     const allTickets = document.querySelectorAll('.ticket');
     
@@ -88,9 +98,8 @@ function filterTickets(status) {
             ticket.style.display = 'none';
         }
     });
-};
-        
-    </script>
+};   
+    </script> -->
 </body>
 </html>
             

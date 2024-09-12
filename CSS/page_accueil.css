@@ -5,77 +5,70 @@ body{
   overflow: hidden;
   position: relative;
   }
-  
    
   .presentation{
     flex-grow: 1;
     display: flex;
     justify-content: center;
-    color:#1e173c;
+    color:#00205b;
   font-size: 30px;
     padding:  1px 800px;
     font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
     text-align: center;
       }
   
-  h3{
-    
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      color: white;
-      text-align: center;
-      padding: 10px 0;
-      font-size: 2rem;
-  }
-  
+      h3{
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        font-size: 2rem;
+    }
     
         /*HEADER*/
   .header{
       display : flex;
      justify-content: space-between;
      align-items: center;
-      height: 200px;
+      height: 280px;
       width: 100%;
       border: solid;
-      background-color: #a0a09f;
-      border-color: #a0a09f;  
-      padding: 20px; 
+      background-color: #00205b;
+      border-color: #00205b;  
+      padding: 20px; }
+
       
-    }  .header h1 {
-      margin: 2; 
-      font-size: 6em; 
-      display: flex;
-    }
+      .header h1 {  
+        margin: 0; 
+        font-size: 5em; 
+       text-align: center;
+       color: #e6e6e6;
+      }
   
-    .logo_sncf{
-      height: 350px;
-      width: 350px;
-    }
-  
-   .titre2{
-    font-size: 6rem;
-    display: flex;
-    justify-content: center;
-    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
-   }
+
+     .logo_sncf{
+      height: 470px;
+      width: 450px;
+     }
 
      /* menu de navigation*/
      .nav {
-      list-style-type: none;
-      margin: 4%;
-      padding: 2%;
-  }
+        list-style-type: none;
+        padding: 1%;
+        margin-top: 200px;
+    }
 
        .nav li {
         display: inline;
-        margin: 0 70px }
+        margin: 0 50px }
 
         .nav a {
           text-decoration: none; 
-          color: #1e173c;
+          color: #e6e6e6;
           font-weight: bold;
-          font-size: 3rem;
+          font-size: 2rem;
           font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
         }
 
@@ -83,128 +76,103 @@ body{
           margin: 0;
           font-size: 24px;
       }
+/*Bandeau Accueil*/
+
+.Bienvenue{
+text-align: center;
+margin-top: 80px;
+}
+
+.titre2 {
+  text-align: center;
+  font-size: 6rem;
+  margin: 0;
+  font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;}
+
+/* GENERAL BLOCK */
+.BlocGénéral {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px; 
+  border-radius: 10px;
+  background-color: #e6e6e6;
+  gap: 20px;
+  height: auto; 
+}
+
 
 /*PREMIERE PARTIE */
 
 .Image1 {
-width: 1200px;
-margin-right: 400px;
+  width: 70%; 
+  margin-top: -300px;
+  margin-left: -220px;
+  transform: translate(-10px, -10px);
+}
+.ImageText {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
 }
 
 .PremierBloc {
   display: flex;
-  align-items: center; 
-  justify-content: flex-start; 
+  flex-direction: column;
+  align-items: flex-start;
+  width: 60%; 
 }
+
+.Decription {
+  display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    width: 30%;
+    margin-left: 80px;
+    margin-top: 230px; }
 
 .Premier_Texte {
-  flex-grow: 1; 
   font-size: 4rem; 
   line-height: 1.5; 
-  font-weight: bold;
 }
-
-/*DEUXIEME PARTIE */
-
-.ChampsTexteBloc {
-  margin-top: 100px;
-  display: flex;
-  flex-direction: column;
-  max-width: 1300px; 
-  margin-left: 150px;
-}
- 
-.ChampsTexteBloc label {
-  font-size: 2rem;
-  margin-bottom: 5px;
-  color: #1e173c;
-  font-weight: bold;
-}
-
-.ChampsTexteBloc input[type="text"],
-.ChampsTexteBloc input[type="email"],
-.ChampsTexteBloc textarea {
-  padding: 10px;
-  margin-bottom: 20px;
-  font-size: 2rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.ChampsTexteBloc textarea {
-  resize: vertical;
-}
-
-.ChampsTexteBloc button {
-  padding: 50px 60px;
-  font-size: 2rem;
+/* FOOTER */
+.footer {
+  height: 280px;
+  background-color: #00205b;
   color: white;
-  background-color: #1e173c;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  margin: 0; 
+  padding: 0; 
+  margin-top: 20px; /* Ajustez selon vos besoins */
+}     
+            
+            .footer h3 {
+                font-size: 2rem;
+                color: white;
+                margin: 0;
+                padding: 10px 0;
+            }
   
-}
+          
+            .logo_sncf2 {
+                position: absolute;     
+                left: 10px; 
+                bottom: 10px; 
+                width: 380px;
+                height: auto;
+            }
+  
 
-.ChampsTexteBloc button:hover {
-  background-color: #82be00;
-}
-
-
-/*DEUXIEME PARTIE*/
-
-.NavBtn {
-  position: fixed; 
-  top: 50%; 
-  right: 800px; 
-  display: flex;
-  flex-direction: column; 
-  gap: 30px; 
-}
-
-.NavBtn button {
-  padding: 10px 20px;
-  font-size: 4rem;
-  color:#1e173c;
-  background-color: #a0a09f;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  width:1200px;
-  height: 200px;
-}
-
-.NavBtn button:hover {
-  background-color: #82be00; 
-}
-
-         /*FOOTER*/
-
-         .footer{
-            height: 280px;
-            border: solid;
-            background-color: #1e173c;
-            border-color: #1e173c;
-            bottom: 0;
-            width: 100%;
-            text-align: center;
-            padding: 10px 0;
-            color: white;
-            position: fixed;      
-            left: 0;
-            bottom: 0;
+            .footer-link {
+              color: #e6e6e6; 
+              text-decoration: none; 
           }
-       
-        
-
-        .logo_sncf2{
-          position: absolute;     
-          left: 0;
-          width: 340px; /* Ajustez la taille de l'image selon vos besoins */
-          height: auto;
-      }
-
-
+          
+          .footer-link:hover {
+              text-decoration: underline; 
+          }
       
 
       
