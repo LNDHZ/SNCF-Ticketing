@@ -1,59 +1,57 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
- 
-
-h3{
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    font-size: 2rem;
-}
-
-  
-              /*HEADER*/
-.header{
-  display : flex;
- justify-content: space-between;
- align-items: center;
-  height: 200px;
-  width: 100%;
-  border: solid;
-  background-color: #00205b;
-  border-color: #00205b;  
-  padding: 20px; 
-  
-}  .header h1 {
-  margin: 2; 
-  font-size: 6em; 
-  display: flex;
-  color: #e6e6e6;
-}
-    
-   
-  .logo_sncf{
-    height: 350px;
-    width: 350px;
+body{
+  margin: 0 auto;
+  background-color: white;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
   }
-
+   
   .presentation{
     flex-grow: 1;
     display: flex;
     justify-content: center;
-    color:#e6e6e6;
+    color:#00205b;
   font-size: 30px;
     padding:  1px 800px;
     font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
     text-align: center;
       }
+  
+      h3{
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        font-size: 2rem;
+    }
+    
+        /*HEADER*/
+  .header{
+      display : flex;
+     justify-content: space-between;
+     align-items: center;
+      height: 280px;
+      width: 100%;
+      border: solid;
+      background-color: #00205b;
+      border-color: #00205b;  
+      padding: 20px; }
 
+      
+      .header h1 {  
+        margin: 0; 
+        font-size: 5em; 
+       text-align: center;
+       color: #e6e6e6;
+      }
+  
+
+     .logo_sncf{
+      height: 470px;
+      width: 450px;
+     }
 /*PREMIER BLOC*/
 
  .Bienvenue {
@@ -88,8 +86,7 @@ h3{
   height: 70vh;
   margin: 150px;
 }
-
-.Ensemble {
+.formulaire {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -128,60 +125,121 @@ h3{
   width: 60px; 
   height: 60px; 
 }
-
-.image-container {
-  display: none;
-  }
    
   .password{
     position: relative;
     width: 100%;
   }
 
+  .main-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
 
-             /*FOOTER*/
-    
-             .footer{
-              height: 280px;
-              border: solid;
-              background-color: #00205b;
-              border-color: #00205b;
-              bottom: 0;
-              width: 100%;
-              text-align: center;
-              padding: 10px 0;
-              position: fixed;      
-              left: 0;
-              bottom: 0;
-            }
+.form-container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+}
 
+.formulaire {
+    width: 45%; /* Formulaire occupe 45% de l'espace */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input-rectangle {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.input-rectangle3 {
+    margin-right: 10px;
+}
+
+.save-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.save-button:hover {
+    background-color: #45a049;
+}
+
+.reponse-container {
+    width: 45%; 
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-top: 0;
+}
+
+
+
+
+
+
+
+
+
+            /* FOOTER */
+.footer {
+  height: 280px;
+  background-color: #00205b;
+  color: white;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  margin: 0; 
+  padding: 0; 
+  margin-top: 20px; 
+}     
+            
             .footer h3 {
-              font-size: 2rem;
-              color:#e6e6e6;
-              margin: 0;
-              padding: 10px 0;
-          }
+                font-size: 2rem;
+                color: white;
+                margin: 0;
+                padding: 10px 0;
+            }
+  
+          
+            .logo_sncf2 {
+                position: absolute;     
+                left: 10px; 
+                bottom: 10px; 
+                width: 380px;
+                height: auto;
+            }
+  
 
-        
-          .logo_sncf2 {
-              position: absolute;     
-              left: 10px; 
-              bottom: 10px; 
-              width: 400px;
-              height: auto;
+            .footer-link {
+              color: #e6e6e6; 
+              text-decoration: none; 
           }
-
-    
-
-    
-    
-            .logo_sncf2{
-              position: absolute;
-              left: 0;
-              width: 340px; 
-              height: auto;
+          
+          .footer-link:hover {
+              text-decoration: underline; 
           }
-    
+      
+
     
        
         
