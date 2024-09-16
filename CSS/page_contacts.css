@@ -1,10 +1,11 @@
-@media (max-width: 768px) 
-  BlocGénéral {
-      flex-direction: column;
-      align-items: center;
+body{
+  margin: 0 auto;
+  background-color: white;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
   }
-
-
+   
   .presentation{
     flex-grow: 1;
     display: flex;
@@ -25,58 +26,72 @@
         padding: 10px 0;
         font-size: 2rem;
     }
-   
+    
         /*HEADER*/
-        .header{
-          display : flex;
-         justify-content: space-between;
-         align-items: center;
-          height: 280px;
-          width: 100%;
-          border: solid;
-          background-color: #00205b;
-          border-color: #00205b;  
-          padding: 20px; }
-    
-          
-          .header h1 {  
-            margin: 0; 
-            font-size: 5em; 
-           text-align: center;
-           color: #e6e6e6;
-          }
+  .header{
+      display : flex;
+     justify-content: space-between;
+     align-items: center;
+      height: 280px;
+      width: 100%;
+      border: solid;
+      background-color: #00205b;
+      border-color: #00205b;  
+      padding: 20px; }
+
       
-    
-         .logo_sncf{
-          height: 470px;
-          width: 450px;
-         }
-              
-          
-        .titre_principal {
-            margin: 0;
-            font-size: 24px;
+      .header h1 {  
+        margin: 0; 
+        font-size: 5em; 
+       text-align: center;
+       color: #e6e6e6;
+      }
+  
+
+     .logo_sncf{
+      height: 470px;
+      width: 450px;
+     }
+
+     /* menu de navigation*/
+     .nav {
+        list-style-type: none;
+        padding: 1%;
+        margin-top: 200px;
+    }
+
+       .nav li {
+        display: inline;
+        margin: 0 50px }
+
+        .nav a {
+          text-decoration: none; 
+          color: #e6e6e6;
+          font-weight: bold;
+          font-size: 2rem;
+          font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
         }
 
-        /*Bandeau Accueil*/
+        .titre_principal {
+          margin: 0;
+          font-size: 24px;
+      }
+/*Bandeau Accueil*/
 
 .Bienvenue{
-  text-align: center;
-  margin-top: 80px;
-  margin-bottom: 150px;
-  }
+text-align: center;
+margin-top: 80px;
+}
 
-  .titre2 {
-    text-align: center;
-    font-size: 6rem;
-    margin: 0;
-    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;}
-  
+.titre2 {
+  text-align: center;
+  font-size: 6rem;
+  margin: 0;
+  font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;}
 
 /* GENERAL BLOCK */
 .BlocGénéral {
   display: flex;
-  justify-content: flex-start;
   flex-direction: column;
   margin-bottom: 50px; 
   border-radius: 10px;
@@ -84,100 +99,125 @@
   gap: 20px;
   height: auto; 
 }
-  
-  /*Bandeau Accueil*/
-  
-  .titre2 {
-    font-size: 5rem;
-    display: flex;
-    justify-content: center;
-    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;}
-  
-/*CONTAINER */
-  
-.container {
+
+
+/*PREMIERE PARTIE */
+
+.Image3 {
+  width: 80%; 
+  margin-top: -180px;
+  margin-left: -200px;
+  transform: translate(-10px, -10px);
+}
+.ImageText {
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
- width: 100%;
+  margin: 20px 0;
 }
 
-.image-container {
-  flex: 1;
-  max-width: 45%;
-  margin-top: -600px;
-  margin-left: -280px;
+.PremierBloc {
+  display: flex;
+  align-items: center;
+  width: 70%; 
 }
 
-.image-container img {
-  width: 100%; 
-  height: auto; 
+form{
+  background-color: white;
+  border-radius: 10px;
+  padding: 30px;
+  width: 1500px;
+  height: 1700px;
 }
 
-.form-container {
-  flex: 0 0 1800px;
-  margin-top: 200px;
-  background-color: #e6e6e6;
-  padding: 20px;
-  border: 2px solid;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+form h1{
+  font-size: 5rem;
+  text-align: center;
+  color: #82BE00;
+  font-weight: bold;
+}
+form .separation{
+  width: 100%;
+  height: 1px;
+  background-color: #00205b;
+}
+form .formulaire {
+ display: flex;
+ flex-wrap: wrap;
+ margin-bottom: 30px;
 }
 
-.form-container form {
+form .formulaire .boite{
+  position: relative;
+  margin-top:30px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-top: 20px;
 }
 
-.form-container label {
-  display: block;
-  font-weight: bold;
-  margin: px 0 5px;
-  padding: 8px;
-  border: 1px solid #e6e6e6;
-  border-radius: 4px;
-  font-size: 30px;
+form .formulaire .gauche .boite input{
+  margin-top: 5px;
+  padding:10px 5px 10px 30px;
+  border: 1px solid #00205b;
+  outline-color: #82BE00;
+  border-radius: 5px;
+}
+
+form .formulaire .gauche .boite i{
+position: absolute;
+left: 0;
+top: 25px;
+padding: 9px 8px;
+color: #82BE00; 
+}
+
+
+form .formulaire .droite{
+  margin-left: 40px;
+}
+form .formulaire .droite .boite{
+ height: 100%;
+}
+
+form .formulaire .droite .boite textarea{
+  margin-top: 5px;
+  padding: 10px;
+  background-color: #f8f8f8;
+  border: 2px solid #00205b;
+  border-radius: 5px;
+  resize: none;
+  height:72%;
+}
+
+form .pied-formulaire button{
+  margin-top:10px;
+  background-color: #00205b;
+  color: #e6e6e6;
+  font-size: 15px;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  transition: transform 0.5s;
+}
+
+form .pied-formulaire button:hover{
+ transform: scale(1.05);
+}
+
+@media screen and (max-width: 920px){
+  form .formulaire .droite{
+    margin-left: 0;
+  } 
+
+}
   
-}
-.form-container input[type="text"],
-.form-container input[type="email"],
-.form-container textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-sizing: border-box;
-    font-size: 20px;
-}
 
 
-.form-container button {
-  background-color: #82BE00;
-    color: #fff;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 26px;
-}
-
-.form-container button:hover {
-  background-color: #001f4d;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
-}
-  
-.form-container h1 {
-  font-size: 3rem; 
-  color: #82BE00;
-  margin-bottom: 60px; 
-  text-align: center;
-  font-weight: bold;
-}
 
 
-  /* FOOTER */
+
+
+/* FOOTER */
 .footer {
   height: 280px;
   background-color: #00205b;
@@ -191,34 +231,49 @@
   margin-top: 20px; 
 }     
             
-.footer h3 {
-  font-size: 2rem;
-  color: white;
-  margin: 0;
-  padding: 10px 0;
-}
-
-
-.logo_sncf2 {
-  position: absolute;     
-  left: 10px; 
-  bottom: 10px; 
-  width: 380px;
-  height: auto;
-}
-
-
-.footer-link {
-color: #e6e6e6; 
-text-decoration: none; 
-}
-
-.footer-link:hover {
-text-decoration: underline; 
-}
-
+            .footer h3 {
+                font-size: 2rem;
+                color: white;
+                margin: 0;
+                padding: 10px 0;
+            }
   
-        
+          
+            .logo_sncf2 {
+                position: absolute;     
+                left: 10px; 
+                bottom: 10px; 
+                width: 380px;
+                height: auto;
+            }
   
-     
+
+            .footer-link {
+              color: #e6e6e6; 
+              text-decoration: none; 
+          }
+          
+          .footer-link:hover {
+              text-decoration: underline; 
+          }
       
+
+      
+
+   
+          @media screen and (max-width: 768px) {
+              .ImageText {
+                  flex-direction: column; 
+                  align-items: center;
+              }
+              
+              .Image2 {
+                  max-width: 100%;  
+                  margin-right: 0;
+                  margin-bottom: 20px;
+              }
+              
+              .Decription {
+                  max-width: 100%; 
+              }
+          }

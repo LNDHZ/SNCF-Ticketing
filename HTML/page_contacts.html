@@ -6,42 +6,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SNCF TICKETING</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/CSS/page_contacts.css" />
     <script src="/JS/page_contacts.js"></script>
       <script>
         function showAlert() {
-            alert("Bienvenue sur votre page contacts, SNCF Ticketing!");
+            alert("Bienvenue sur la page CONTACTS, SNCF Ticketing!");
         }
-
+       
         window.onload = function() {
             showAlert();  
-
-            const demande = document.getElementById('demande');
-            const maxChars = 400;
-            const counter = document.createElement('div');
-            counter.id = 'charCounter';
-            counter.innerHTML = `0/${maxChars}`;
-            demande.parentNode.insertBefore(counter, demande.nextSibling);
-
-            demande.addEventListener('input', function() {
-                const charCount = demande.value.length;
-                counter.innerHTML = `${charCount}/${maxChars}`;
-                counter.style.color = charCount > maxChars ? 'red' : 'black';
-            });
         };
-
-        function validateForm() {
-            const nom = document.getElementById('nom').value;
-            const email = document.getElementById('email').value;
-            const demande = document.getElementById('demande').value;
-
-            if (nom === "" || email === "" || demande === "") {
-                alert("Tous les champs doivent être remplis avant l'envoi.");
-                return false;
-            }
-            alert("Votre demande a été envoyée avec succès, nous vous répondrons dans les plus brefs délais !");
-            return true;
-        }
     </script>
 
 </head>
@@ -55,61 +30,82 @@
                <div class="presentation">
                     <h1 class="titre_principal">SNCF TICKETING</h1>
                 </div>
+                        <nav class="nav">
+                            <li><a href="/HTML/Page_utilisateur.html">Se connecter</a></li>
+                            <li><a href="/HTML/page_creation_profil.html">Créer un compte</a></li>
+                        </nav>
         </header>  
-                   
       
 
-<!--PREMIER BLOC-->    
-            <div class="BlocGénéral">
-                <div class="Bienvenue">
-                    <h2 class="titre2"> 
-                        <span style="color: #00205b;">Bienvenue sur votre page :</span>
-                        <span style="color:#82BE00;"> Contacts</span>
-                    </h2>
+<!--PREMIER BLOC-->
+    <div class="BlocGénéral">
+            <div class="Bienvenue">
+                <h2 class="titre2"> 
+                    <span style="color: #00205b;">Bienvenue sur la page CONTACTS</span>
+                    <span style="color:#82BE00;"> SNCF Ticketing </span>             
+                </h2>
+            </div>
+            <div class="PremierBloc">
+                <div class="ImageText">
+                            <img src="/Images/image_page_contact.png" alt="ImagePremiere" class="Image3"/>                                 
                 </div>
-                <div class="container">
-                    <div class="image-container">
-                        <img src="/Images/image_page_contact.png" alt="ImagePremiere" class="Image1"/>       
+                <form>    
+                    <h1>Contactez nous</h1>
+                    <div class="separation"></div>
+                    <div class="formulaire">
+                        <div class="gauche">
+                            <div class="boite">
+                                <label>Votre nom</label>
+                                <input type="text">
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+                            <div class="boite">
+                                <label>Votre prénom</label>
+                                <input type="text">
+                                <i class="fa-solid fa-user-minus"></i>
+                            </div> 
+                            <div class="boite">
+                                <label>Votre adresse e-mail</label>
+                                <input type="text">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div> 
+                            <div class="boite">
+                                <label>Votre numéro de CP</label>
+                                <input type="text">
+                                <i class="fa-solid fa-users"></i>
+                            </div> 
+                        </div>  
+                        <div class="droite">
+                            <div class="boite">
+                                <label>Votre Message</label>
+                                <textarea placeholder="Saisissez ici ..."></textarea>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-container">
-                        <h1>Contactez-nous</h1>
-                        <form action="send_mail.php" method="POST">
-                            <label for="name">Nom :</label>
-                            <input type="text" id="name" name="name" required>
 
-                            <label for="prenom">Prénom :</label>
-                            <input type="text" id="prenom" name="prenom" required>
-                
-                            <label for="email">Email :</label>
-                            <input type="email" id="email" name="email" required>
+                    <div class="pied-formulaire" align="center">
+                        <button>Envoyer le message</button>
+                    </div>                         
+                </form>                   
+            </div>                  
+    </div>
 
-                            <label for="CP">Numéro de CP:</label>
-                            <textarea id="message" name="message" rows="2" required maxlength="8" ></textarea>
-                            <p id="charCount">0/8 caractères</p>
-                
-                            <label for="message">Message :</label>
-                            <textarea id="message" name="message" rows="5" required maxlength="500"></textarea>
-                            <p id="charCount">0/500 caractères</p>
-                
-                            <button type="submit">Envoyer</button>
-                        </form>
-                    </div>
+        <footer class="footer">
+            <img class="logo_sncf2" src="/Images/essai.logo.png" alt="logo_sncf2"/>
+                <div class="contenu_footer">
+                    <h3>SNCF Ticketing |
+                        <a href="/version.html"  class="footer-link">Version 1.1</a> |
+                        <a href="/cgu.html" class="footer-link">CGU</a> | 
+                        <a href="/mentions-legales.html" class="footer-link">Mentions légales</a> | 
+                        <a href="/HTML/page_contacts.html" class="footer-link"> Contactez-nous</a>
+                         e-SNCF ©2024 
+                    </h3>
                 </div>
-              
-            <footer class="footer">
-                <img class="logo_sncf2" src="/Images/logo-removebg-preview.png" alt="logo_sncf2"/>
-                    <div class="contenu_footer">
-                        <h3>SNCF Ticketing |
-                            <a href="/version.html"  class="footer-link">Version 1.1</a> |
-                            <a href="/cgu.html" class="footer-link">CGU</a> | 
-                            <a href="/mentions-legales.html" class="footer-link">Mentions légales</a> | 
-                            <a href="/HTML/page_contacts.html" class="footer-link"> Contactez-nous</a>
-                             e-SNCF ©2024 
-                        </h3>
-                    </div>
-            </footer>
-
-
+        </footer>
+    </section>
+   
+                    
+      
         <!-- JAVASCRIPT -->
     <script>
         function validateForm() {
@@ -126,6 +122,7 @@
         }
 
 const demande = document.getElementById('demande');
+const maxChars = 400;
 const counter = document.createElement('div');
 counter.id = 'charCounter';
 counter.innerHTML = `0/${maxChars}`;
@@ -140,9 +137,10 @@ demande.addEventListener('input', function() {
         counter.style.color = 'black';
     }
 });
-</script>  
-   
-</body> 
-</section>
+</script>
 
+
+
+   
+</body>
 </html>
