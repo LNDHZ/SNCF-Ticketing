@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SNCF TICKETING</title>
     <link rel="stylesheet" href="/CSS/page_creation_profil.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="/JS/Page_creation_profil.js"></script>
     <script>
       function showAlert() {
@@ -31,39 +32,44 @@
 
       <!--PREMIER BLOC-->
 
-      <div class="Bienvenue">
-        <h2 class="titre2">
-          Je crée mon espace : 
-          <span style="color: #82be00"> SNCF Ticketing </span>
-        </h2>
-      </div>
-      <hr class="Separateur1" />
+        <div class="Bienvenue">
+          <h2 class="titre2">Je crée mon espace :<span style="color: #82be00"> SNCF Ticketing </span></h2>      
+        </div>
 
-      <!--DEUXIEME BLOC-->
-        <div class="main-container">
-          <div class="form-container">
-              <div class="formulaire">
-                  <input type="text" class="input-rectangle" placeholder="Nom">
-                  <input type="text" class="input-rectangle" placeholder="Prénom">
-                  <input type="text" class="input-rectangle" placeholder="Numéro de CP">
-                  <input type="mail" class="input-rectangle" placeholder="Adresse mail">
-                  <input type="mdp" class="input-rectangle" placeholder="Mot de passe"> 
-                  <input type="mdp2" class="input-rectangle" placeholder="Confirmation du mot de passe"> 
-                  <input type="checkbox" class="input-rectangle3">
-                  <div>              
-                    <input type="checkbox" class="input-rectangle3">
-                    <label for="checkbox">Accepter les termes et conditions</label>
-                  </div>
-                <button class="save-button">Enregistrer</button>     
-              </div>        
-              <div class="reponse-container">
-                  <h2>Réponse</h2>
-                  <p>Votre réponse s'affichera ici.</p>
-              </div>
+        <form onsubmit="return validateForm()">
+          <h4>INSCRIPTION</h4>
+          <hr>
+          <div class="name-field">
+            <div>
+              <label>Nom</label>
+              <input type="text" id="nom">               
+            </div>
+            <div>
+              <label>Prénom</label>
+              <input type="text" id="prenom">               
+            </div>
           </div>
-      </div>       
-       
-      
+            <label>Numéro de CP</label>
+            <input type="text" id="cp">               
+            <label>Adresse e-mail</label>
+            <input type="email" id="email"> 
+            <label for="mdp">Mot de passe</label>
+          <div class="password-field">
+            <input type="password" id="mdp">
+            <i class="fas fa-eye" id="togglePassword"></i>
+          </div>       
+            <label for="mdp2">Confirmation du mot de passe</label>
+            <div class="password-field">
+            <input type="password" id="mdp2">
+            <i class="fas fa-eye" id="togglePassword"></i>
+          </div>
+          <input type="checkbox" id="terms" />
+          <label for="terms">J'accepte les conditions</label>
+            <input type="submit" value="S'inscrire">
+            <p>Vous avez déjà un compte ? <a href="#">Se connecter</a></p>
+        </form>
+
+           
 
 <!--FOOTER-->
 
@@ -74,7 +80,7 @@
               <a href="/version.html"  class="footer-link">Version 1.1</a> |
               <a href="/cgu.html" class="footer-link">CGU</a> | 
               <a href="/mentions-legales.html" class="footer-link">Mentions légales</a> | 
-              <a href="/HTML/page_contacts.html" class="footer-link"> Contactez-nous</a>
+              <a href="/HTML/page_contacts.html" class="footer-link"> Contactez-nous</a>|
                e-SNCF ©2024 
           </h3>
       </div>
