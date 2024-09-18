@@ -61,64 +61,73 @@ body{
   
   }
    .titre2{
-    font-size: 5rem;
+    font-size: 6rem;
     display: flex;
     justify-content: center;
     font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
     margin-left: 400px;
+    margin-bottom: 500px;
    }
 
    /* FORMULAIRE */
    form {
-    margin: 40px auto;
+    margin: 80px auto;
     background-color: #ffffff;
-    padding: 60px 50px;
-    border-radius: 10px;
-    max-width: 1100px;
-    height: 1000px;
-    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
+    padding: 60px;
+    border-radius: 15px;
+    max-width: 800px;   
+    width: 100%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column; 
     align-items: center; 
-    justify-content: center; 
+   justify-content: center;
+   border: 1px solid #00205b;
 }
 
 form .form-title {
     color: #82BE00;
-    font-size: 3rem; 
-    margin-bottom: 30px; 
+    font-size: 4rem;
+    margin-bottom: 20px;
     text-align: center;
+    font-weight: bold;
 }
-form .inputs {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 500px;
-}
-
-
-form .inputs input[type="email"],
-form .inputs input[type="password"] {
+form .inputs input {
     padding: 15px;
     border-radius: 5px;
     border: 1px solid #ddd;
     background-color: #f9f9f9;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     outline: none;
-    font-size: 2rem;
+    font-size: 1.6rem;
+    width: 100%;
+    box-sizing: border-box; /* Ensure all inputs are sized the same */
+}
+
+form .inputs input[type="email"],
+form .inputs input[type="password"],
+form .inputs input[type="cp"] {
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    margin-bottom: 25px;
+    outline: none;
+    font-size: 1.6rem;
+    width: 100%;
 }
 
 form .inputs input[type="email"]:focus,
-form .inputs input[type="password"]:focus {
+form .inputs input[type="password"]:focus
+form .inputs input[type="cp"]:focus  {
     border-color: #82BE00;
     box-shadow: 0 0 5px rgba(130, 190, 0, 0.2);
 }
-
 form p.inscription {
     font-size: 2rem;
     text-align: center;
     margin-bottom: 20px;
-    color:#00205b;
+    color: #00205b;
 }
 
 form p.inscription span {
@@ -131,13 +140,15 @@ form p.inscription a.inscription-link {
     color: #82BE00; 
     font-weight: bold;
     user-select: none;
+    text-decoration: none;
 }
 
 form p.inscription a.inscription-link:hover {
     color: #6fae00; 
 }
+
 form button {
-    padding: 15px 25px;
+    padding: 15px 50px;
     border: none;
     border-radius: 5px;
     font-size: 2rem;
@@ -145,6 +156,17 @@ form button {
     background-color: #82BE00;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 100%;
+    max-width: 400px;
+    margin-top: 30px;
+}
+
+form label {
+    font-size: 1.6rem;
+    color: #333;
+    margin-bottom: 10px;
+    display: block;
+    font-weight: bold;
 }
 
 
@@ -157,7 +179,9 @@ form button:focus {
     outline: none;
 }
 
-
+input, button {
+    transition: all 0.3s ease;
+}
 
 
     /* FOOTER */
