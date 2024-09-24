@@ -1,101 +1,108 @@
 <?php
-// Connexion à la base de données
-$servername = "votre_nom_de_serveur";
-$username = "votre_nom_utilisateur";
-$password = "votre_mot_de_passe";
-$dbname = "votre_nom_de_base_de_données";
+require 'db_connexion.php'; // Inclure votre fichier de connexion à la base de données
 
-// Créer une connexion
-$conn = new mysqli($servername, $username, $password, $dbname);
+// Initialiser une variable pour le message de succès
+$message = "";
 
-// Vérifier la connexion
-if ($conn->connect_error) {
-    die("Échec de la connexion : " . $conn->connect_error);
-}
+// Vérifiez si l'ID du ticket est fourni dans l'URL
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
 
-// Récupérer l'ID du ticket à partir de l'URL
-$id = $_GET['id'];
+    // Récupérer le ticket à modifier
+    $stmt = $pdo->prepare("SELECT * FROM tickets WHERE id = ?");
+    $stmt->execute([$id]);
+    $ticket = $stmt->fetch();
 
-// Récupérer les données du ticket
-$sql = "SELECT * FROM table_tickets WHERE id = $id";
-$result = $conn->query($sql);
-$ticket = $result->fetch_assoc();
-
-// Vérifier si le formulaire est soumis
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Récupérer les données du formulaire
-    $titre = $_POST['titre_ticket'];
-    $description = $_POST['description_ticket'];
-    $date_creation = $_POST['date_creation_ticket'];
-    $date_modif = date("Y-m-d H:i:s"); // Mettre à jour la date de modification
-    $utilisateur_id = $_POST['utilisateur_id'];
-    $categorie_id = $_POST['categorie_id'];
-    $statut_id = $_POST['statut_id'];
-    $priorite_id = $_POST['priorite_id'];
-    $date_cloture = $_POST['date_cloture'];
-    $cree_par = $_POST['cree_par'];
-    $commentaire_resolution = $_POST['commentaire_resolution'];
-
-    // Mettre à jour le ticket dans la base de données
-    $update_sql = "UPDATE table_tickets 
-                   SET titre_ticket='$titre', description_ticket='$description', date_modif_ticket='$date_modif', utilisateur_id='$utilisateur_id', 
-                       categorie_id='$categorie_id', statut_id='$statut_id', priorite_id='$priorite_id', date_cloture='$date_cloture', 
-                       cree_par='$cree_par', commentaire_resolution='$commentaire_resolution' 
-                   WHERE id=$id";
-    if ($conn->query($update_sql) === TRUE) {
-        echo "Ticket mis à jour avec succès.";
-        header("Location: gestion_tickets.php");
-        exit();
-    } else {
-        echo "Erreur lors de la mise à jour du ticket : " . $conn->error;
+    // Si le ticket n'existe pas, redirigez ou affichez un message d'erreur
+    if (!$ticket) {
+        die("Ticket non trouvé !");
     }
-}
 
-// Fermer la connexion
-$conn->close();
+    // Vérifiez si le formulaire a été soumis
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Récupérer les données du formulaire
+        $description = $_POST['description'];
+        $etat = $_POST['etat'];
+        $priorite = $_POST['priorite'];
+
+        // Préparer et exécuter la requête de mise à jour
+        $stmt = $pdo->prepare("UPDATE tickets SET description = ?, etat = ?, priorite = ? WHERE id = ?");
+        $stmt->execute([$description, $etat, $priorite, $id]);
+
+        // Message de succès
+        $message = "Ticket mis à jour avec succès !";
+        // Optionnel : redirection vers une autre page
+        // header("Location: gestion_tickets.php");
+        // exit();
+    }
+} else {
+    die("Aucun ID de ticket spécifié !");
+}
 ?>
 
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Éditer le Ticket</title>
-    <link rel="stylesheet" href="style.css"> <!-- Si vous avez un fichier CSS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Éditer un Ticket - SNCF Ticketing</title>
+    <link rel="stylesheet" href="/CSS/page_oubli_mdp.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-    <h1>Éditer le Ticket</h1>
-    <form method="POST">
-        <label>Titre:</label>
-        <input type="text" name="titre_ticket" value="<?php echo htmlspecialchars($ticket['titre_ticket']); ?>" required>
+    <!-- HEADER -->
+    <header class="header">
+        <img class="logo_sncf" src="/Images/logo.news.png" alt="logo_sncf" />
+        <div class="presentation">
+            <h1 class="titre_principal">SNCF TICKETING</h1>
+        </div>
+    </header>
 
-        <label>Description:</label>
-        <textarea name="description_ticket" required><?php echo htmlspecialchars($ticket['description_ticket']); ?></textarea>
+    <div class="container">
+        <h2 class="titre2">Éditer le Ticket</h2>
+        
+        <!-- Afficher le message de succès -->
+        <?php if ($message): ?>
+            <div class="alert alert-success">
+                <?php echo $message; ?>
+            </div>
+        <?php endif; ?>
 
-        <label>Date de Création:</label>
-        <input type="datetime-local" name="date_creation_ticket" value="<?php echo htmlspecialchars(date('Y-m-d\TH:i', strtotime($ticket['date_creation_ticket']))); ?>" required>
+        <!-- FORMULAIRE -->
+        <form method="POST" action="editer.php?id=<?php echo $ticket['id']; ?>">
+            <div class="form-group">
+                <label for="description">Description</label>
+                <input type="text" id="description" name="description" class="form-control" value="<?php echo htmlspecialchars($ticket['description']); ?>" required>
+            </div>
+            <div class="form-group">
+                <label for="etat">État</label>
+                <input type="text" id="etat" name="etat" class="form-control" value="<?php echo htmlspecialchars($ticket['etat']); ?>" required>
+            </div>
+            <div class="form-group">
+                <label for="priorite">Priorité</label>
+                <select id="priorite" name="priorite" class="form-control" required>
+                    <option value="basse" <?php echo ($ticket['priorite'] == 'basse') ? 'selected' : ''; ?>>Basse</option>
+                    <option value="moyenne" <?php echo ($ticket['priorite'] == 'moyenne') ? 'selected' : ''; ?>>Moyenne</option>
+                    <option value="haute" <?php echo ($ticket['priorite'] == 'haute') ? 'selected' : ''; ?>>Haute</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Mettre à jour le Ticket</button>
+        </form>
+    </div>
 
-        <label>Date de Clôture:</label>
-        <input type="datetime-local" name="date_cloture" value="<?php echo htmlspecialchars(date('Y-m-d\TH:i', strtotime($ticket['date_cloture']))); ?>">
-
-        <label>Utilisateur ID:</label>
-        <input type="text" name="utilisateur_id" value="<?php echo htmlspecialchars($ticket['utilisateur_id']); ?>" required>
-
-        <label>Catégorie ID:</label>
-        <input type="text" name="categorie_id" value="<?php echo htmlspecialchars($ticket['categorie_id']); ?>" required>
-
-        <label>Statut ID:</label>
-        <input type="text" name="statut_id" value="<?php echo htmlspecialchars($ticket['statut_id']); ?>" required>
-
-        <label>Priorité ID:</label>
-        <input type="text" name="priorite_id" value="<?php echo htmlspecialchars($ticket['priorite_id']); ?>" required>
-
-        <label>Créé Par:</label>
-        <input type="text" name="cree_par" value="<?php echo htmlspecialchars($ticket['cree_par']); ?>" required>
-
-        <label>Commentaire de Résolution:</label>
-        <textarea name="commentaire_resolution"><?php echo htmlspecialchars($ticket['commentaire_resolution']); ?></textarea>
-
-        <input type="submit" value="Mettre à jour">
-    </form>
+    <!-- FOOTER -->
+    <footer class="footer">
+        <img class="logo_sncf2" src="/Images/logo-removebg-preview.png" alt="logo_sncf2" />
+        <div class="contenu_footer">
+            <h3>
+                SNCF Ticketing |
+                <a href="/version.html" class="footer-link">Version 1.1</a> |
+                <a href="/HTML/cgu.html" class="footer-link">CGU</a> |
+                <a href="/HTML/mentions.html" class="footer-link">Mentions légales</a> |
+                <a href="/HTML/page_contacts.html" class="footer-link">Contactez-nous</a> |
+                e-SNCF ©2024
+            </h3>
+        </div>
+    </footer>
 </body>
 </html>

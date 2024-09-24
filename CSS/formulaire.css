@@ -1,0 +1,187 @@
+body {
+    margin: 0 auto;
+    background-color: #e6e6e6;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .presentation {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    color: #00205b;
+    font-size: 30px;
+    padding: 1px 800px;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    text-align: center;
+  }
+  
+  /* HEADER */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 280px;
+    width: 100%;
+    background-color: #00205b;
+    padding: 20px;
+  }
+  
+  .header h1 {
+    margin: 0;
+    font-size: 5em;
+    color: #e6e6e6;
+   justify-content: center ;
+   margin-left: 400px;
+  }
+  
+  .logo_sncf {
+    height: 470px;
+    width: 450px;
+  }
+  
+  /* Menu de navigation */
+  .nav {
+    list-style-type: none;
+    padding: 1%;
+    margin-top: 200px;
+  }
+  
+  .nav li {
+    display: inline;
+    margin: 0 50px;
+  }
+  
+  .nav a {
+    text-decoration: none;
+    color: #e6e6e6;
+    font-weight: bold;
+    font-size: 2rem;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+  }
+  
+  .titre_principal {
+    margin: 0;
+    font-size: 24px;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  /* Bandeau Accueil */
+  .Bienvenue {
+    text-align: center;
+    margin-top: 80px;
+  }
+  
+  .titre2 {
+    font-size: 5rem; 
+    margin-bottom: 120px;
+    white-space: nowrap; 
+    margin-left: -300px;
+  }
+  
+  .container {
+    margin-top: 50px;
+    max-width: 600px; 
+    background-color: white;
+    padding: 20px; 
+    border-radius: 5px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+h1 {
+    text-align: center; 
+    margin-bottom: 20px; 
+}
+input[type="submit"] {
+    width: 100%; 
+}
+  
+  p {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #00205b;
+  }
+  
+  /* FOOTER */
+  .footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 280px;
+    background-color: #00205b;
+    color: white;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .footer h3 {
+    font-size: 2rem;
+    color: white;
+    margin: 0;
+    padding: 10px 0;
+  }
+  
+  .logo_sncf2 {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    width: 380px;
+    height: auto;
+  }
+  
+  .footer-link {
+    color: #e6e6e6;
+    text-decoration: none;
+  }
+  
+  .footer-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive */
+  @media screen and (max-width: 768px) {
+    .ImageText {
+        flex-direction: column;
+        align-items: center;
+    } }
+  
+    .Image2 {
+        max-width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+  
+  
+  /* Media Queries pour rendre le formulaire responsive */
+  @media (max-width: 768px) {
+    .container {
+        margin: 20px; /* Espacement sur les petits écrans */
+        padding: 15px; /* Réduire l'espacement interne */
+    }
+    h1 {
+        font-size: 24px; /* Réduire la taille du titre */
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        margin: 10px; /* Espacement encore plus réduit */
+        padding: 10px; /* Réduire davantage l'espacement interne */
+    }
+    h1 {
+        font-size: 20px; /* Réduire encore la taille du titre */
+    }
+    .form-group {
+        margin-bottom: 15px; /* Espacement entre les groupes de champs */
+    }
+    input[type="submit"] {
+        font-size: 16px; /* Augmenter la taille du texte du bouton */
+    }
+  
+}
