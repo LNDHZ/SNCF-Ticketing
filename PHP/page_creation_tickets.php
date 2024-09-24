@@ -1,36 +1,23 @@
-<?php
-// Initialiser les variables
-$errors = [];
-$tickets = [];
-
-// Traitement du formulaire lors de la soumission
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Récupérer et nettoyer les données du formulaire
-    $champ1 = htmlspecialchars($_POST['champ1']);
-    $champ2 = htmlspecialchars($_POST['champ2']);
-    $champ3 = htmlspecialchars($_POST['champ3']);
-    
-    // Validation des champs
-    if (empty($champ1) || empty($champ2) || empty($champ3)) {
-        $errors[] = "Tous les champs doivent être remplis.";
-    }
-
-    // Ajouter le ticket si aucune erreur
-    if (empty($errors)) {
-        $tickets[] = "$champ1 | $champ2 | $champ3";
-    }
-}
-?>
-
 <!DOCTYPE html>
 <html lang="fr">
 
+<!--HEAD-->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SNCF TICKETING</title>
     <link rel="stylesheet" href="/CSS/page_creation_tickets.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="/JS/page_creation_tickets.js"></script>
+    <script>
+        function showAlert() {
+            alert("Bienvenue sur votre la page des CGU, SNCF Ticketing!");
+        }
+       
+        window.onload = function() {
+            showAlert();  
+        };
+    </script>
 </head>
 
 <body>
@@ -41,106 +28,97 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <h1 class="titre_principal">SNCF TICKETING</h1>
             </div>
             <nav class="nav">
-                <li><a href="/HTML/Page_utilisateur.html">Mon profil</a></li> 
-                <li><a href="/HTML/Page_accueil.html">Déconnexion</a></li>
-            </nav>                     
-        </header>   
-        
-        <!-- PREMIER BLOC -->
+                <li><a href="/HTML/Page_utilisateur.html">Se connecter</a></li>
+                <li><a href="/HTML/page_creation_profil.html">Créer un compte</a></li>
+            </nav>
+        </header>  
+            
+        <!--PREMIER BLOC-->
+        <div class="BlocGénéral">
+            <div class="Bienvenue">
+                <h2 class="titre2"> 
+                    <span style="color: #00205b;">Bienvenue sur la page de création de ticket </span>
+                    <span style="color:#82BE00;"> SNCF Ticketing </span>          
+                </h2>
+            </div>
 
-        <div class="JeSuisUtilisateur">
-            <h2 class="titre3"> Je suis utilisateur : <span style="color:#82BE00;"> SNCF Ticketing </span></h2>
-        </div>
+            <!-- FORMULAIRE DE CRÉATION DE TICKET -->
+            <div class="form-container">
+                <h1>Créer un Ticket d'incident</h1>
+                
+                <!-- Début du code PHP -->
+                <?php
+                // Vérifie si le formulaire a été soumis
+                if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                    // Récupère les valeurs du formulaire
+                    $cp = htmlspecialchars($_POST['cp']);
+                    $category = htmlspecialchars($_POST['category']);
+                    $subject = htmlspecialchars($_POST['subject']);
+                    $priority = htmlspecialchars($_POST['priority']);
+                    $description = htmlspecialchars($_POST['description']);
 
-        <div class="container">
-            <div class="PremierContainer">
-                <p class="ticketCree"> Liste des tickets créés</p>
-                <div class="listeTickets">
-                    <?php
-                    // Afficher les tickets créés
-                    if (!empty($tickets)) {
-                        foreach ($tickets as $ticket) {
-                            echo "<div>{$ticket}</div>";
-                        }
-                    }
-                    ?>
+                    // Affichage d'un message de confirmation (ou tu peux l'enregistrer dans une base de données)
+                    echo "<div class='alert alert-success'>Votre ticket a été créé avec succès !</div>";
+                    echo "<strong>Numéro de CP:</strong> $cp <br>";
+                    echo "<strong>Rôle:</strong> $category <br>";
+                    echo "<strong>Sujet:</strong> $subject <br>";
+                    echo "<strong>Priorité:</strong> $priority <br>";
+                    echo "<strong>Description:</strong> $description <br>";
+                }
+                ?>
+                <!-- Fin du code PHP -->
+
+                <form action="" method="POST">
+                    <label for="cp">Numéro de CP *</label>
+                    <input type="text" id="cp" name="cp" placeholder="Votre numéro de CP" required maxlength="8">
+
+                    <label for="category">Rôle*</label>
+                    <select id="role" name="category" required>
+                        <option value="" disabled selected>Quel est votre rôle ?</option>
+                        <option value="technique">Utilisateur</option>
+                        <option value="service">Administrateur</option>
+                        <option value="autre">Support technique</option>
+                    </select>
+
+                    <label for="subject">Sujet de l'incident *</label>
+                    <input type="text" id="subject" name="subject" placeholder="Sujet de l'incident" required>
+
+                    <label for="category">Catégorie *</label>
+                    <select id="category" name="category" required>
+                        <option value="" disabled selected>Choisir une catégorie</option>
+                        <option value="technique">Power Apps</option>
+                        <option value="service">Power BI</option>
+                        <option value="autre">Power Automate</option>
+                    </select>
+
+                    <label for="priority">Priorité *</label>
+                    <select id="priority" name="priority" required>
+                        <option value="" disabled selected>Choisir une priorité</option>
+                        <option value="faible">Faible</option>
+                        <option value="moyenne">Moyenne</option>
+                        <option value="élevée">Élevée</option>
+                        <option value="haute">Haute</option>
+                    </select>
+
+                    <label for="description">Description brève et précise *</label>
+                    <textarea id="description" name="description" placeholder="Décrivez l'incident" required></textarea>
+
+                    <button type="submit">Créer le Ticket</button>
+                </form>
+            </div>
+
+            <footer class="footer">
+                <img class="logo_sncf2" src="/Images/logo-removebg-preview.png" alt="logo_sncf2"/>
+                <div class="contenu_footer">
+                    <h3>SNCF Ticketing |
+                        <a href="/version.html" class="footer-link">Version 1.1</a> |
+                        <a href="/cgu.html" class="footer-link">CGU</a> | 
+                        <a href="/mentions-legales.html" class="footer-link">Mentions légales</a> | 
+                        <a href="/HTML/page_contacts.html" class="footer-link"> Contactez-nous</a>
+                        e-SNCF ©2024 
+                    </h3>
                 </div>
-            </div>
-
-            <div class="DeuxiemeContainer">
-                <p class="formTickets">Formulaire de création de tickets</p>
-                <button type="button" class="btnCreation">Je veux créer un ticket</button>              
-                <div class="NouveauTicket">
-                    <form method="post" action="">
-                        <input type="text" name="champ1" class="rectangle2" placeholder="Champs Saisie">
-                        <input type="text" name="champ2" class="rectangle2" placeholder="Champs Saisie">
-                        <input type="text" name="champ3" class="rectangle2" placeholder="Champs Saisie"> 
-                        <button type="submit" class="btnValidation">Valider</button> 
-                    </form>    
-                    <?php
-                    // Afficher les erreurs
-                    if (!empty($errors)) {
-                        foreach ($errors as $error) {
-                            echo "<p style='color:red;'>{$error}</p>";
-                        }
-                    }
-                    ?>
-                </div>    
-            </div>
-        </div>
-
-        <footer class="footer">
-            <img class="logo_sncf2" src="/Images/logo-removebg-preview.png" alt="logo_sncf2"/>
-            <div class="contenu_footer">
-                <h3>SNCF Ticketing | Version 1.1 | e-SNCF ©2024|CGU|Mentions légales </h3>
-            </div>
-        </footer> 
-    </section>
-
-    <script>
-    // Fonction pour afficher/masquer le formulaire de création de tickets
-    function toggleTicketForm() {
-        const ticketForm = document.querySelector('.NouveauTicket');
-        const createButton = document.querySelector('.btnCreation');
-        
-        // Vérifiez si le formulaire est actuellement visible
-        if (ticketForm.style.display === "none" || !ticketForm.style.display) {
-            ticketForm.style.display = "block";
-            createButton.textContent = "Masquer le formulaire";
-        } else {
-            ticketForm.style.display = "none";
-            createButton.textContent = "Je veux créer un ticket";
-        }
-    }
-
-    // Écouteurs d'événements pour les boutons
-    document.addEventListener('DOMContentLoaded', () => {
-        // Cacher le formulaire au début
-        document.querySelector('.NouveauTicket').style.display = "none";
-        
-        // Écouteur pour le bouton "Je veux créer un ticket"
-        document.querySelector('.btnCreation').addEventListener('click', toggleTicketForm);
-    });
-    </script>
-</body>
+            </footer>
+        </section>       
+    </body>
 </html>
-
-
-
-//Explications des modifications
-PHP pour le traitement des données :
-
-Le code PHP au début du fichier traite les données du formulaire lorsqu'il est soumis.
-Les données sont nettoyées et validées.
-Les erreurs sont stockées dans un tableau et les tickets sont stockés dans un autre tableau.
-Affichage des tickets et des erreurs :
-
-Les tickets créés sont affichés dans la section listeTickets.
-Les erreurs de validation sont affichées en haut du formulaire si elles existent.
-Formulaire HTML :
-
-Le formulaire utilise la méthode POST pour soumettre les données au même fichier PHP.
-JavaScript :
-
-La fonction JavaScript pour afficher/masquer le formulaire reste inchangée.
-Assurez-vous que votre serveur est configuré pour exécuter des fichiers PHP et que les chemins vers les fichiers CSS et JavaScript sont corrects. //

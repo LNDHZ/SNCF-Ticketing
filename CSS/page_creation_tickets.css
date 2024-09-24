@@ -1,219 +1,171 @@
-body{
-  margin: 0 auto;
-  background-color:#e6e6e6;
-  height: 100%;
-  overflow: hidden;
-  position: relative;
-  }
-  
+body {
+  margin: 0; 
+  background-color: #e6e6e6;
+  height: 100vh; 
+  display: flex;
+  flex-direction: column; 
+}
    
   .presentation{
     flex-grow: 1;
     display: flex;
     justify-content: center;
-    color:#1e173c;
+    color:#00205b;
   font-size: 30px;
     padding:  1px 800px;
     font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
     text-align: center;
       }
   
-  h3{
-    
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      color: white;
-      text-align: center;
-      padding: 10px 0;
-      font-size: 2rem;
-  }
-  
+   
     
         /*HEADER*/
   .header{
       display : flex;
      justify-content: space-between;
      align-items: center;
-      height: 200px;
+      height: 280px;
       width: 100%;
       border: solid;
-      background-color: #a0a09f;
-      border-color: #a0a09f;  
-      padding: 20px; 
+      background-color: #00205b;
+      border-color: #00205b;  
+      padding: 20px; }
+
       
-    }  .header h1 {
-      margin: 2; 
-      font-size: 6em; 
-      display: flex;
-    }
+      .header h1 {  
+        margin: 0; 
+        font-size: 5em; 
+       text-align: center;
+       color: #e6e6e6;
+      }
   
+
+     .logo_sncf{
+      height: 470px;
+      width: 450px;
+     }
+
   
-    .logo_sncf{
-      height: 350px;
-      width: 350px;
-    }
-  
-   
-   .titre2{
-    font-size: 6rem;
-    display: flex;
-    justify-content: center;
-    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
-   }
-  
-       /* menu de navigation*/
-       .nav {
-        list-style-type: none;
-        margin: 4%;
-        padding: 2%;
-    }
-  
-         .nav li {
-          display: inline;
-          margin: 0 70px }
-  
-          .nav a {
-            text-decoration: none; 
-            color: #1e173c;
-            font-weight: bold;
-            font-size: 3rem;
-            font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
-          }
-  
-          .titre_principal {
-            margin: 0;
-            font-size: 24px;
-        }
-  
-  .Image1{
-    width: 800px;
-    height: 600px;
+     /* menu de navigation*/
+     .nav {
+      list-style-type: none;
+      padding: 1%;
+      margin-top: 200px;
   }
 
-/*PREMIER BLOC*/
+     .nav li {
+      display: inline;
+      margin: 0 50px }
 
- 
- .titre3{
-  font-size: 3rem;
-  display: flex;
-  justify-content: center;
-  font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
- }
-
- .container {
-  display: flex;
-  justify-content: space-around; 
-  align-items: flex-start; 
-  padding: 20px;
-
-}
-
-.PremierContainer, .DeuxiemeContainer {
-  background-color: lightgray;
-  padding: 20px;
-  border-radius: 8px;
-  width: 40%;
-  height: 60vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center; 
-  justify-content: flex-start;
-}
+      .nav a {
+        text-decoration: none; 
+        color: #e6e6e6;
+        font-weight: bold;
+        font-size: 2rem;
+        font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+      }
 
 
-.formTickets {
-  margin-bottom: 20px;
-  font-weight: bold;
-  text-align: center; /* Centre le texte */
-  width: 100%; /* Assure que le texte utilise toute la largeur disponible pour le centrage */
-}
-.DeuxiemeContainer{
-  display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
+      .Bienvenue{
+        text-align: center;
+        margin-top: 80px;
         }
-
-
- .PremierContainer {
+        
+        .titre2 {
+          text-align: center;
+          font-size: 6rem;
+          margin: 0;
+          font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;}
+        
+   /* GENERAL BLOCK */
+.BlocGénéral {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-}
-
-.listeTickets {
-  display: flex;
-  flex-direction: column;
-  gap: 10px; 
+  background-color: #e6e6e6;
+  padding: 20px;
   width: 100%;
+  min-height: calc(100vh - 560px);
 }
 
-.ticketCree{
-align-items: flex-start;
+.form-container {
+    margin: 80px auto;
+    background-color: #ffffff;
+    margin-top: 200px;
+    padding: 60px;
+    border-radius: 15px;
+    max-width: 800px;
+    width: 100%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #00205b;
 }
 
-
-.NouveauTicket{
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 100%;
+.form-container h1 {
+    color: #82BE00;
+    font-size: 4rem;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
 }
 
-.rectangle,.rectangle2 {
-  width: 100%;
-  height: 180px;
-  padding: 10px;
-  border: 1px solid #1e173c;
-  box-sizing: border-box; 
-  text-align: center;
-  font-size: 2rem;
+.form-container label {
+    font-size: 1.6rem;
+    color: #333;
+    margin-bottom: 10px;
+    display: block;
+    font-weight: bold;
 }
 
-.btnCreation, .btnValidation {
-  padding: 10px 20px;
-  font-size: 25px;
-  cursor: pointer;
-  border: none;
-  border-radius: 10px;
-  background-color: #82BE00;
-  color: white;
-  margin-top: 50px; 
+.form-container input, .form-container textarea, .form-container select {
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    margin-bottom: 25px;
+    outline: none;
+    font-size: 1.6rem;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-.btnCreation {
-  
-      margin-bottom: 40px; 
-      height: 100px;
-      width: 400px;
+.form-container input:focus, .form-container textarea:focus, .form-container select:focus {
+    border-color: #82BE00;
+    box-shadow: 0 0 5px rgba(130, 190, 0, 0.2);
 }
 
-
-
-
-.ticketCree,.formTickets{
-  margin-bottom: 20px;
-  padding: 10px 10px;
-  font-size: 50px;
-  cursor: pointer;
-  color:#1e173c;
-  border-radius: 2px;
-  font-weight: bold;
-  font-weight: bold;
-  text-align: center;
+.form-container textarea {
+    resize: vertical;
+    min-height: 150px;
 }
 
-.formTickets{
-  margin-bottom: 20px;
-  font-weight: bold;
-  text-align: center;
-  width: 100%;
+.form-container button {
+    padding: 15px 50px;
+    border: none;
+    border-radius: 5px;
+    font-size: 2rem;
+    color: #ffffff;
+    background-color: #82BE00;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 100%;
+    max-width: 400px;
+    margin-top: 30px;
 }
 
+.form-container button:hover {
+    background-color: #6fae00;
+    transform: scale(1.02);
+}
 
-
-              /* FOOTER */
+/* FOOTER */
 .footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   height: 280px;
   background-color: #00205b;
   color: white;
@@ -251,6 +203,30 @@ align-items: flex-start;
           .footer-link:hover {
               text-decoration: underline; 
           }
-      
-       
-        
+
+
+
+          /* Responsive Design */
+          
+@media screen and (max-width: 768px) {
+  .titre2 {
+      font-size: 4rem; /* Réduction de la taille du titre sur mobile */
+  }
+
+  .form-container {
+      padding: 30px; /* Ajustement du padding pour mobile */
+      margin-top: 50px; /* Réduire l'espace supérieur sur mobile */
+  }
+
+  .nav {
+      margin-top: 20px; /* Ajustement de la marge du menu de navigation */
+  }
+
+  .nav li {
+      margin: 0 10px; /* Réduction de l'espace entre les éléments du menu */
+  }
+
+  .nav a {
+      font-size: 1.5rem; /* Réduction de la taille des liens du menu */
+  }
+}

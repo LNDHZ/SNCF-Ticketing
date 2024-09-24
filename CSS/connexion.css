@@ -4,6 +4,7 @@ body{
     height: 100%;
     overflow: hidden;
     position: relative;
+    font-family: Arial, Helvetica, sans-serif;
     }
      
     .presentation{
@@ -13,7 +14,6 @@ body{
       color:#00205b;
     font-size: 30px;
       padding:  1px 800px;
-      font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
       text-align: center;
         }
     
@@ -45,6 +45,7 @@ body{
           font-size: 5em; 
          text-align: center;
          color: #e6e6e6;
+         margin-left: 300px;
         }
     
   
@@ -52,124 +53,145 @@ body{
         height: 470px;
         width: 450px;
        }
+
+
+       .titre2 {
+        font-size: 5rem; 
+        margin-bottom: 120px;
+        white-space: nowrap; 
+        padding-top: 100px;
+      }
+/* Menu de navigation */
+.nav {
+  list-style-type: none;
+  padding: 1%;
+  margin-top: 200px;
+}
+
+.nav li {
+  display: inline;
+  margin: 0 50px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #e6e6e6;
+  font-weight: bold;
+  font-size: 2rem;
+  font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+}
+
   /*PREMIER BLOC*/
   
    .Bienvenue {
-    margin-top: 0;
-    padding-top: 0;
+    margin-top: 5;
     text-align: center; 
+    color: #00205b;
   
   }
    .titre2{
-    font-size: 6rem;
+    font-size: 5rem;
     display: flex;
     justify-content: center;
-    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
-    margin-left: 400px;
     margin-bottom: 500px;
    }
 
-   /* FORMULAIRE */
-   form {
-    margin: 80px auto;
-    background-color: #ffffff;
+   /* Formulaire */
+form {
+    background-color: #fff;
     padding: 60px;
-    border-radius: 15px;
-    max-width: 800px;   
-    width: 100%;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column; 
-    align-items: center; 
-   justify-content: center;
-   border: 1px solid #00205b;
-}
+    border-radius: 30px;
+    max-width: 1200px;
+    margin: 150px auto;
+    margin-top: -200px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+  }
 
-form .form-title {
-    color: #82BE00;
+  .form-title {
     font-size: 4rem;
-    margin-bottom: 20px;
+    color: #6fae00;
     text-align: center;
+    margin-bottom: 90px;
+    margin-top: 50px ;
     font-weight: bold;
-}
-form .inputs input {
-    padding: 15px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    background-color: #f9f9f9;
-    margin-bottom: 25px;
-    outline: none;
-    font-size: 1.6rem;
-    width: 100%;
-    box-sizing: border-box; /* Ensure all inputs are sized the same */
-}
-
-form .inputs input[type="email"],
-form .inputs input[type="password"],
-form .inputs input[type="cp"] {
-    padding: 15px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    background-color: #f9f9f9;
-    margin-bottom: 25px;
-    outline: none;
-    font-size: 1.6rem;
-    width: 100%;
-}
-
-form .inputs input[type="email"]:focus,
-form .inputs input[type="password"]:focus
-form .inputs input[type="cp"]:focus  {
-    border-color: #82BE00;
-    box-shadow: 0 0 5px rgba(130, 190, 0, 0.2);
-}
-form p.inscription {
-    font-size: 2rem;
-    text-align: center;
-    margin-bottom: 20px;
-    color: #00205b;
-}
-
-form p.inscription span {
-    color: #82BE00;
-    font-weight: bold;
-    cursor: pointer;
     
-}
-form p.inscription a.inscription-link {
-    color: #82BE00; 
-    font-weight: bold;
-    user-select: none;
-    text-decoration: none;
+  }
+
+.inputs input {
+  width: 100%;
+  padding: 20px;
+  font-size: 2rem;
+  border-radius: 10px;
+  border: 2px solid #ccc;
+  margin-bottom: 30px;
 }
 
-form p.inscription a.inscription-link:hover {
-    color: #6fae00; 
-}
-
-form button {
-    padding: 15px 50px;
-    border: none;
-    border-radius: 5px;
-    font-size: 2rem;
-    color: #ffffff;
-    background-color: #82BE00;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    width: 100%;
-    max-width: 400px;
-    margin-top: 30px;
-}
 
 form label {
-    font-size: 1.6rem;
-    color: #333;
-    margin-bottom: 10px;
+    font-size: 2rem;
+    color: #00205b;
+    margin-bottom: 17px;
     display: block;
     font-weight: bold;
 }
 
-
+  
+  .forgot-password {
+    color: #6fae00;
+    text-decoration: none;
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  
+  .submit-btn {
+    background-color: #6fae00;
+    color: white;
+    padding: 18px;
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    font-size: 2rem;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  .submit-btn:hover {
+    background-color: #00205b;
+  }
+  
+  .one-click-login {
+    background-color: transparent;
+    color:#00205b;
+    padding: 20px;
+    border: 2px solid #ccc #00205b;
+    border-radius: 10px;
+    width: 100%;
+    font-size: 1.9rem;
+    cursor: pointer;
+    margin-bottom: 40px;
+  }
+  
+  .one-click-login:hover {
+    background-color: rgba(255, 59, 48, 0.1);
+  }
+  
+  .create-account {
+    text-align: center;
+    font-size: 1.7rem;
+  }
+  
+  .create-account a {
+    color:#6fae00;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .create-account a:hover {
+    text-decoration: underline;
+  }
 form button:hover {
     background-color: #6fae00;
     transform: scale(1.02);
@@ -182,6 +204,7 @@ form button:focus {
 input, button {
     transition: all 0.3s ease;
 }
+
 
 
     /* FOOTER */
@@ -224,3 +247,42 @@ input, button {
                 text-decoration: underline; 
             }
         
+
+            /* Media Queries Responsive */
+
+@media (max-width: 768px) {
+  .header {
+      flex-direction: column; 
+      align-items: center;
+  }
+
+  .header h1 {
+      font-size: 3rem; 
+  }
+
+  .nav {
+      margin-top: 100px; 
+  }
+
+  .nav li {
+      display: block; 
+      margin: 10px 0; 
+  }
+
+  .titre2 {
+      font-size: 3rem; 
+      margin-bottom: 30px; 
+  }
+
+  .form-title {
+      font-size: 2.5rem; 
+  }
+
+  .inputs input, .submit-btn, .one-click-login {
+      font-size: 1.4rem; 
+  }
+
+  .footer h3 {
+      font-size: 1.2rem; 
+  }
+}

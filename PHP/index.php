@@ -1,12 +1,17 @@
 <?php
-// Inclure le fichier de connexion
-include 'connexion.php';
+include 'connexion.php'; // Inclure le fichier de connexion
 
-// Requête SQL pour vérifier la connexion
-$query = $pdo->query("SELECT * FROM votre_table");
-$results = $query->fetchAll(PDO::FETCH_ASSOC);
+$sql = "SELECT * FROM table_ticket"; 
+$result = $conn->query($sql);
 
-echo "<pre>";
-print_r($results); 
-echo "</pre>";
+if ($result->num_rows > 0) {
+    // Afficher les données de chaque ligne
+    while($row = $result->fetch_assoc()) {
+        echo "ID: " . $row["id"]. " - Nom: " . $row["nom"]. "<br>"; // Remplacez par les colonnes de votre table
+    }
+} else {
+    echo "0 résultats";
+}
+
+$conn->close(); // Fermer la connexion
 ?>

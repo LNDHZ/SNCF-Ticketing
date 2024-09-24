@@ -53,4 +53,33 @@
                 togglePassword.classList.toggle('fa-eye-slash');
             });
         });
-    </script>
+       
+document.getElementById('creationProfilForm').addEventListener('submit', async function(event) {
+    event.preventDefault(); // Empêche le rechargement de la page
+
+    const formData = new FormData(this);
+    const data = Object.fromEntries(formData);
+
+    try {
+        const response = await fetch('/api/creationprofil', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        });
+
+        if (response.ok) {
+            const result = await response.json();
+            alert('Profil créé avec succès !');
+            // Redirige vers une autre page si nécessaire
+        } else {
+            alert('Erreur lors de la création du profil.');
+        }
+    } catch (error) {
+        console.error('Erreur:', error);
+    }
+});
+</script>
+
+    
