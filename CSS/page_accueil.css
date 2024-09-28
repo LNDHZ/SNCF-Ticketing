@@ -71,6 +71,10 @@ body{
           font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
         }
 
+        .nav a:hover {
+          color: #82BE00; 
+          text-decoration: none;}
+            
         .titre_principal {
           margin: 0;
           font-size: 24px;
@@ -99,7 +103,6 @@ margin-top: 80px;
   height: auto; 
   width: 100%;
 }
-
 
 /*PREMIERE PARTIE */
 
@@ -182,7 +185,8 @@ padding: 30px;
           }
           
           .footer-link:hover {
-              text-decoration: underline; 
+              text-decoration: none;
+              color: #82BE00;
           }
       
 

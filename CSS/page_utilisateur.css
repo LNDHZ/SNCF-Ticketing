@@ -55,10 +55,14 @@ body{
     justify-content: center;
     font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
    }
-
-      .titre_principal {
-        margin: 0;
-        font-size: 24px;
+ 
+    
+    .titre_principal {
+      margin: 0;
+      font-size: 24px;
+      white-space: nowrap; 
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     /* PREMIER BLOC */

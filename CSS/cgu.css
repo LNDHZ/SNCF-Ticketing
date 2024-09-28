@@ -1,10 +1,11 @@
-body {
+body{
   margin: 0 auto;
   background-color: #e6e6e6;
   height: 100%;
   overflow: hidden;
   position: relative;
-}
+  font-family: Arial, Helvetica, sans-serif;
+  }
 
 .presentation {
   flex-grow: 1;
@@ -61,6 +62,11 @@ body {
   font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
 }
 
+.nav a:hover {
+  color: #82BE00;
+  text-decoration: none; }
+  
+  
 .titre_principal {
   margin: 0;
   font-size: 24px;
@@ -169,10 +175,10 @@ p {
   color: #e6e6e6;
   text-decoration: none;
 }
-
 .footer-link:hover {
-  text-decoration: underline;
-}
+  color: #82BE00;
+  text-decoration: none }
+
 
 /* Responsive */
 @media screen and (max-width: 768px) {

@@ -1,11 +1,11 @@
-body{
-    margin: 0 auto;
-    background-color: #e6e6e6;
-    height: 100%;
-    overflow: hidden;
-    position: relative;
-    font-family: Arial, Helvetica, sans-serif;
-    }
+body {
+  margin: 0;
+  background-color: #e6e6e6;
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
      
     .presentation{
       flex-grow: 1;
@@ -49,10 +49,11 @@ body{
         }
     
   
-       .logo_sncf{
-        height: 470px;
-        width: 450px;
-       }
+        .header .logo_sncf {
+          max-width: 100%;
+          height: auto;
+          max-height: 150px; 
+      }
 
 
        .titre2 {
@@ -80,6 +81,11 @@ body{
   font-size: 2rem;
   font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
 }
+
+.nav a:hover {
+  color: #82BE00;
+  text-decoration: none; }
+  
 
   /*PREMIER BLOC*/
   

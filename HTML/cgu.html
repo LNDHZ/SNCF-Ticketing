@@ -9,13 +9,20 @@
     <link rel="stylesheet" href="/CSS/cgu.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-    <script src="/JS/cgu.js"></script>
     <script>
+       
         function showAlert() {
-            alert("Bienvenue sur votre la page des CGU, SNCF Ticketing!");
+            alert("Bienvenue sur la page des CGU de SNCF Ticketing !");
         }
+
+      
         window.onload = function() {
             showAlert();  
+        };
+
+        
+        window.onbeforeunload = function() {
+            return "Êtes-vous sûr de vouloir quitter cette page ? Vous pourriez ne pas avoir fini de lire les CGU.";
         };
     </script>
 </head>
@@ -96,7 +103,7 @@
                     <a href="/version.html" class="footer-link">Version 1.1</a> |
                     <a href="/cgu.html" class="footer-link">CGU</a> | 
                     <a href="/mentions-legales.html" class="footer-link">Mentions légales</a> | 
-                    <a href="/HTML/page_contacts.html" class="footer-link">Contactez-nous</a>
+                    <a href="/HTML/page_contacts.html" class="footer-link">Contactez-nous</a> |
                     e-SNCF ©2024 
                 </h3>
             </div>
@@ -105,34 +112,16 @@
 
     <!-- JAVASCRIPT -->
     <script>
-        function validateForm() {
-            const nom = document.getElementById('nom').value;
-            const email = document.getElementById('email').value;
-            const demande = document.getElementById('demande').value;
+       
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(function(link) {
+            link.addEventListener('mouseover', function() {
+                link.style.color = '#82BE00';
+            });
 
-            if (nom === "" || email === "" || demande === "") {
-                alert("Tous les champs doivent être remplis avant l'envoi.");
-                return false;
-            }
-            alert("Votre demande a été envoyée avec succès, nous vous répondrons dans les plus brefs délais !");
-            return true;
-        }
-
-        const demande = document.getElementById('demande');
-        const maxChars = 400;
-        const counter = document.createElement('div');
-        counter.id = 'charCounter';
-        counter.innerHTML = `0/${maxChars}`;
-        demande.parentNode.insertBefore(counter, demande.nextSibling);
-
-        demande.addEventListener('input', function() {
-            const charCount = demande.value.length;
-            counter.innerHTML = `${charCount}/${maxChars}`;
-            if (charCount > maxChars) {
-                counter.style.color = 'red';
-            } else {
-                counter.style.color = 'black';
-            }
+            link.addEventListener('mouseout', function() {
+                link.style.color = ''; 
+            });
         });
     </script>
 </body>

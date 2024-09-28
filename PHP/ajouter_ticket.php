@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $commentaire_resolution = $_POST['commentaire_resolution'];
 
     // Préparer la requête d'insertion
-    $sql = "INSERT INTO tickets (titre, cree_par, statut, priorite, categorie, commentaire_resolution)
+    $sql = "INSERT INTO table_ticket (titre, cree_par, statut, priorite, categorie, commentaire_resolution)
             VALUES ('$titre', $cree_par, '$statut', '$priorite', '$categorie', '$commentaire_resolution')";
 
     if ($conn->query($sql) === TRUE) {

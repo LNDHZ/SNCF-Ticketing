@@ -73,6 +73,17 @@
       font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
     }
      
+    .nav a:hover {
+      color: #82BE00;
+      text-decoration: none; }
+      
+      .titre_principal {
+        margin: 0;
+        font-size: 24px;
+        white-space: nowrap; 
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
       .Bienvenue {
         margin-top: 0;
         padding-top: 0;

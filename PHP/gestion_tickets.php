@@ -1,21 +1,20 @@
 <?php
-// Démarrer la session pour gérer l'authentification
 session_start();
 
-// Inclure la configuration de la base de données
+
 include 'includes/config.php';
 
-// Vérifier si l'utilisateur est authentifié et a un rôle d'administrateur
+
 if (!isset($_SESSION['user_role']) || $_SESSION['user_role'] !== 'Administrateur') {
     header("Location: /HTML/page_creation_tickets.html");
     exit();
 }
 
-// Requête pour récupérer les tickets depuis la base de données
-$sql = "SELECT * FROM tickets ORDER BY created_at DESC";
+
+$sql = "SELECT * FROM table_tickets ORDER BY created_at DESC";
 $result = mysqli_query($conn, $sql);
 
-// Vérifier s'il y a des erreurs lors de la récupération
+
 if (!$result) {
     die("Erreur lors de la récupération des tickets : " . mysqli_error($conn));
 }
@@ -68,15 +67,17 @@ if (!$result) {
                     <tr>
                         <th>ID</th>
                         <th>Titre ticket</th>
-                        <th>Description</th>
-                        <th>Crée par</th>
+                        <th>Description du ticket</th>
                         <th>Date de création</th>
+                        <th>Date de modification</th>
+                        <th>Crée par</th>
                         <th>Catégorie</th>
                         <th>Priorité</th>
                         <th>Statut</th>
+                        <th>Date de clôture</th>
                         <th>Commentaire de résolution</th>
-                        <th>Historique de l'action</th>
                         <th>Action</th>
+                        <th>Historique de l'action</th>                    
                     </tr>
                 </thead>
                 <tbody>
@@ -84,15 +85,18 @@ if (!$result) {
                     <?php while ($row = mysqli_fetch_assoc($result)): ?>
                     <tr>
                         <td><?php echo htmlspecialchars($row['id']); ?></td>
-                        <td><?php echo htmlspecialchars($row['ticket_title']); ?></td>
-                        <td><?php echo htmlspecialchars($row['description']); ?></td>
-                        <td><?php echo htmlspecialchars($row['created_by']); ?></td>
-                        <td><?php echo htmlspecialchars($row['created_at']); ?></td>
-                        <td><?php echo htmlspecialchars($row['category']); ?></td>
-                        <td><?php echo htmlspecialchars($row['priority']); ?></td>
-                        <td><?php echo htmlspecialchars($row['status']); ?></td>
-                        <td><?php echo htmlspecialchars($row['resolution_comment']); ?></td>
-                        <td><?php echo htmlspecialchars($row['action_history']); ?></td>
+                        <td><?php echo htmlspecialchars($row['titre_ticket']); ?></td>
+                        <td><?php echo htmlspecialchars($row['description_ticket']); ?></td>
+                        <td><?php echo htmlspecialchars($row['date_creation_ticket']); ?></td>
+                        <td><?php echo htmlspecialchars($row['date_modif_ticket']); ?></td>
+                        <td><?php echo htmlspecialchars($row['utilisateur_id']); ?></td>
+                        <td><?php echo htmlspecialchars($row['categorie_id']); ?></td>
+                        <td><?php echo htmlspecialchars($row['statut_id']); ?></td>
+                        <td><?php echo htmlspecialchars($row['priorite_id']); ?></td>
+                        <td><?php echo htmlspecialchars($row['date_cloture']); ?></td>
+                        <td><?php echo htmlspecialchars($row['cree_par']); ?></td>
+                        <td><?php echo htmlspecialchars($row['commentaire_resolution']); ?></td>
+                        <td><?php echo htmlspecialchars($row['Action_ticket']); ?></td>
                         <td>
                             <!-- Lien pour modifier ou supprimer un ticket -->
                             <a href="modifier_ticket.php?id=<?php echo $row['id']; ?>" class="btn btn-warning btn-sm">Modifier</a>

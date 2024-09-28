@@ -16,7 +16,6 @@ body {
     font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
     text-align: center;
       }
-  
    
     
         /*HEADER*/
@@ -64,11 +63,23 @@ body {
         font-size: 2rem;
         font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
       }
-
+      
+      .nav a:hover {
+        color: #82BE00;
+        text-decoration: none; }
+        
+        .titre_principal {
+          margin: 0;
+          font-size: 24px;
+          white-space: nowrap; 
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
 
       .Bienvenue{
         text-align: center;
         margin-top: 80px;
+        margin-bottom: ;
         }
         
         .titre2 {
@@ -89,58 +100,43 @@ body {
 }
 
 .form-container {
-    margin: 80px auto;
-    background-color: #ffffff;
-    margin-top: 200px;
-    padding: 60px;
-    border-radius: 15px;
-    max-width: 800px;
-    width: 100%;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #00205b;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 1000px; 
 }
 
 .form-container h1 {
-    color: #82BE00;
-    font-size: 4rem;
-    margin-bottom: 20px;
-    text-align: center;
-    font-weight: bold;
+  margin-bottom: 20px; 
+  text-align: center;
+}
+
+.form-control {
+  margin-bottom: 15px; 
 }
 
 .form-container label {
-    font-size: 1.6rem;
-    color: #333;
-    margin-bottom: 10px;
-    display: block;
-    font-weight: bold;
+  font-size: 1.6rem;
+  color: #333;
+  margin-bottom: 10px;
+  display: block;
+  font-weight: bold;
 }
 
 .form-container input, .form-container textarea, .form-container select {
-    padding: 15px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    background-color: #f9f9f9;
-    margin-bottom: 25px;
-    outline: none;
-    font-size: 1.6rem;
-    width: 100%;
-    box-sizing: border-box;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  margin-bottom: 25px;
+  outline: none;
+  font-size: 1.6rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.form-container input:focus, .form-container textarea:focus, .form-container select:focus {
-    border-color: #82BE00;
-    box-shadow: 0 0 5px rgba(130, 190, 0, 0.2);
-}
-
-.form-container textarea {
-    resize: vertical;
-    min-height: 150px;
-}
 
 .form-container button {
     padding: 15px 50px;
@@ -159,6 +155,17 @@ body {
 .form-container button:hover {
     background-color: #6fae00;
     transform: scale(1.02);
+}
+
+.btn-primary {
+  width: 80%; 
+  background-color: #82BE00; 
+  border: none;
+  padding: 10px;
+}
+
+.btn-primary:hover {
+  background-color: #6ca700; 
 }
 
 /* FOOTER */
@@ -201,7 +208,8 @@ body {
           }
           
           .footer-link:hover {
-              text-decoration: underline; 
+              text-decoration: none;
+              color: #82BE00;
           }
 
 

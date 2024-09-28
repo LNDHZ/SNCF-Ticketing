@@ -71,7 +71,18 @@ body{
             font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
           }
 
-        
+          .nav a:hover {
+            color: #82BE00;
+            text-decoration: none; }
+            
+            .titre_principal {
+              margin: 0;
+              font-size: 24px;
+              white-space: nowrap; 
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+            
 
 /*Bandeau Accueil*/
   
@@ -87,6 +98,7 @@ body{
       font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
       color: #82be00; }
     
+
    /* GENERAL BLOCK */
   .BlocGénéral {
       display: flex;
@@ -102,11 +114,12 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
+    font-size: 20px;
 }
 
 table, th, td {
   border: 1px solid #82be00;
-  padding: 15px;
+  padding: 20px;
   text-align: left;
   vertical-align: top;
 }
@@ -128,10 +141,10 @@ th {
     background-color: #00205b;
     color: white;
     font-weight: bold;
-    padding : 15px;
+    padding : 20px;
     text-align: left;  
-    font-size: 2rem;
-    border: 1px solid #82be00;   
+    font-size: 3rem;
+    border: 2px solid #82be00;   
 }
 
 
@@ -145,47 +158,47 @@ th {
 
 
 td:first-child, th:first-child {
-  width: 50px; 
+  width: 200px; 
 }
 
 td:nth-child(2), th:nth-child(2) {
-  width: 150px; 
+  width: 450px; 
 }
 
 td:nth-child(3), th:nth-child(3) {
-  width: 300px; 
+  width: 700px; 
 }
 
 td:nth-child(4), th:nth-child(4) {
-  width: 120px; 
+  width: 350px; 
 }
 
 td:nth-child(5), th:nth-child(5) {
-  width: 150px; 
+  width: 350px; 
 }
 
 td:nth-child(6), th:nth-child(6) {
-  width: 120px;
+  width: 400px;
 }
 
 td:nth-child(7), th:nth-child(7) {
-  width: 120px; 
+  width: 400px; 
 }
 
 td:nth-child(8), th:nth-child(8) {
-  width: 100px; 
+  width: 350px; 
 }
 
 td:nth-child(9), th:nth-child(9) {
-  width: 300px;
+  width: 350px;
 }
 
 td:nth-child(10), th:nth-child(10) {
-  width: 250px;
+  width: 350px;
 }
 
 td:nth-child(11), th:nth-child(11) {
-  width: 150px; }
+  width: 250px; }
 
 
 td:hover {
@@ -236,7 +249,8 @@ th:hover {
             }
             
             .footer-link:hover {
-                text-decoration: underline; 
+                text-decoration: none;
+                color: #82BE00;
             }
         
   

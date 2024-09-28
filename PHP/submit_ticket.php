@@ -4,16 +4,19 @@ include 'includes/config.php';
 
 // Vérifier si le formulaire est soumis
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $cp = $_POST['cp'];
-    $role = $_POST['category'];
-    $subject = $_POST['subject'];
-    $category = $_POST['category'];
-    $priority = $_POST['priority'];
-    $description = $_POST['description'];
+    $titre = $_POST['subject']; 
+    $description = $_POST['description']; 
+    $utilisateur_id = $_POST['user_id']; 
+    $categorie = $_POST['category']; 
+    $statut = 'ouvert'; 
+    $priorite = $_POST['priority']; 
+    $cree_par = $_POST['created_by']; 
+    $commentaire_resolution = ''; 
+    $action_ticket = ''; 
 
     // Préparer la requête SQL
-    $sql = "INSERT INTO tickets (cp, role, subject, category, priority, description)
-            VALUES ('$cp', '$role', '$subject', '$category', '$priority', '$description')";
+    $sql = "INSERT INTO table_tickets (titre_ticket, description_ticket, date_creation_ticket, utilisateur_id, categorie_id, statut_id, priorite_id, cree_par, commentaire_resolution, Action_ticket)
+            VALUES ('$titre', '$description', NOW(), '$utilisateur_id', '$categorie', '$statut', '$priorite', '$cree_par', '$commentaire_resolution', '$action_ticket')";
 
     // Exécuter la requête
     if (mysqli_query($conn, $sql)) {

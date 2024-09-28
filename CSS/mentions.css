@@ -72,10 +72,15 @@ body{
             font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
           }
   
-          .titre_principal {
-            margin: 0;
-            font-size: 24px;
-        }
+          .nav a:hover {
+            color: #82BE00;
+            text-decoration: none; }
+            
+            .titre_principal {
+              margin: 0;
+              font-size: 24px;
+          }
+         
   /*Bandeau Accueil*/
   
   .Bienvenue{

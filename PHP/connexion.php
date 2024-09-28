@@ -1,3 +1,45 @@
+<?php
+
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Inclure la connexion à la base de données
+    include 'connexion.php'; 
+
+    // Récupérer les données du formulaire
+    $email = $_POST['email'];
+    $cp = $_POST['cp'];
+    $password = $_POST['password'];
+
+   
+   
+    
+    // Exemple de requête de vérification
+    $sql = "SELECT * FROM table_utilisateur WHERE email = helene.leleux@sncf.fr  AND cp = 9112590P";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("ss", $email, $cp);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        // L'utilisateur existe, vérifier le mot de passe
+        $user = $result->fetch_assoc();
+        if (password_verify($password, $user['mot_de_passe'])) {
+            // Authentification réussie, démarrer une session
+            session_start();
+            $_SESSION['user_id'] = $user['id'];
+            header("Location: dashboard.php"); 
+            exit();
+        } else {
+            $error = "Mot de passe incorrect.";
+        }
+    } else {
+        $error = "Aucun utilisateur trouvé avec ces informations.";
+    }
+    
+    $stmt->close();
+    $conn->close();
+}
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <!--HEAD-->
@@ -7,6 +49,7 @@
     <title>SNCF TICKETING</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/CSS/connexion.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="/JS/connexion.js"></script>
     <script>
@@ -43,9 +86,8 @@
     </h2>
 
     <!-- Formulaire de connexion -->
-    <form id="loginForm" method="POST" action="login.php"> <!-- Utilisation de POST -->
+    <form id="loginForm" method="POST" action="login.php"> 
         <h1 class="form-title">Je me connecte à mon compte</h1>
-
         <div class="inputs">                            
             <label for="email">E-mail *</label>
             <input type="email" id="email" name="email" placeholder="Mon adresse mail" required>
@@ -72,39 +114,5 @@
       </div>
     </footer>
   </section>
-
-<!-- PHP pour traiter les données du formulaire -->
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Inclure le fichier de configuration (connexion à la base de données)
-    include 'config.php';  // config.php doit contenir les détails de la connexion à la base de données
-
-    // Récupérer les données du formulaire
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $cp = mysqli_real_escape_string($conn, $_POST['cp']);
-    $password = mysqli_real_escape_string($conn, $_POST['password']);
-
-    // Requête pour vérifier les informations de l'utilisateur dans la base de données
-    $query = "SELECT * FROM users WHERE email = '$email' AND cp = '$cp'";
-    $result = mysqli_query($conn, $query);
-
-    if (mysqli_num_rows($result) == 1) {
-        // L'utilisateur a été trouvé, vérifier le mot de passe
-        $user = mysqli_fetch_assoc($result);
-        if (password_verify($password, $user['password'])) {  // password_verify pour comparer les mots de passe hashés
-            // Connexion réussie, rediriger l'utilisateur vers la page de gestion
-            header('Location: gestion_utilisateurs.php');
-            exit;
-        } else {
-            echo "<p style='color:red; text-align:center;'>Mot de passe incorrect</p>";
-        }
-    } else {
-        echo "<p style='color:red; text-align:center;'>Email ou Numéro de CP incorrect</p>";
-    }
-
-    // Fermer la connexion
-    mysqli_close($conn);
-}
-?>
 </body>
 </html>

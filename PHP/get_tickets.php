@@ -1,5 +1,5 @@
 <?php
-include 'db.php'; // Inclure le fichier de connexion
+include 'db.php'; 
 
 $sql = "SELECT * FROM table_ticket"; 
 $result = $conn->query($sql);

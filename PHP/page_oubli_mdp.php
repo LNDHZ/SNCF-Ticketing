@@ -7,11 +7,9 @@
     <link rel="stylesheet" href="/CSS/page_oubli_mdp.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="/JS/connexion.js"></script>
 </head>
 
 <body>
-    <!-- SECTION -->
     <section>
         <!-- HEADER -->
         <header class="header">
@@ -47,17 +45,8 @@
         <?php
         // Traitement du formulaire
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            // Récupérer l'adresse e-mail
             $email = $_POST['email'];
-
-            // Ici, tu peux ajouter du code pour envoyer l'e-mail, par exemple avec mail()
-            // mail($email, "Réinitialisation du mot de passe", "Voici le lien pour réinitialiser votre mot de passe...");
-
-            // Pour l'instant, on va juste afficher un message de confirmation
             echo "<script>alert('Un lien de réinitialisation de mot de passe a été envoyé à $email.');</script>";
-            // Rediriger vers une autre page après la soumission (optionnel)
-            // header("Location: page_suivante.html");
-            // exit();
         }
         ?>
 
@@ -76,5 +65,13 @@
             </div>
         </footer>
     </section>
+
+    <!-- JavaScript Simple -->
+    <script>
+        document.getElementById('forgotPasswordForm').onsubmit = function() {
+            var emailInput = document.getElementById('email').value;
+            alert("Un lien de réinitialisation a été envoyé à " + emailInput);
+        };
+    </script>
 </body>
 </html>
