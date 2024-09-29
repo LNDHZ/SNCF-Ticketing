@@ -9,8 +9,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $cp = $_POST['cp'];
     $password = $_POST['password'];
-
-   
    
     
     // Exemple de requête de vérification
@@ -21,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
-        // L'utilisateur existe, vérifier le mot de passe
+     
         $user = $result->fetch_assoc();
         if (password_verify($password, $user['mot_de_passe'])) {
             // Authentification réussie, démarrer une session
